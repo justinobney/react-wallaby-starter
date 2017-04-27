@@ -11,6 +11,7 @@ module.exports = function(wallaby) {
 
   // Babel needs this
   process.env.NODE_ENV = 'development';
+
   return {
     files: ['src/**/*.js?(x)', 'src/**/*.snap', '!src/**/*.spec.js?(x)'],
     tests: ['src/**/*.spec.js?(x)'],

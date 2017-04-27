@@ -3,13 +3,13 @@ import {createElement} from 'react';
 import {Header, Rating, Table} from 'semantic-ui-react';
 import Card from 'layout/Card';
 import RequiresClaim from 'features/security/RequiresClaim';
+import {Col} from 'styles';
 
 const DashboardIndex = () => (
-  <div className="flex-wrapper">
+  <Col>
     <Section1 />
-
     <RequiresClaim claim="dashboard/section2" render={() => <Section2 />} />
-  </div>
+  </Col>
 );
 
 const Section1 = () => (
