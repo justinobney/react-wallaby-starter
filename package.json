@@ -3,7 +3,6 @@
   "private": true,
   "devDependencies": {
     "@kadira/storybook": "^2.21.0",
-    "autobind-decorator": "^1.3.4",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-decorators": "^6.24.1",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
@@ -13,6 +12,7 @@
   },
   "dependencies": {
     "axios": "^0.15.3",
+    "prop-types": "^15.5.8",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.3",
@@ -36,6 +36,9 @@
   },
   "eslintConfig": {
     "extends": "react-app",
+    "globals": {
+      "jasmine": true
+    },
     "rules": {
       "semi": [
         "warn",

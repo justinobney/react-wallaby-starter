@@ -1,13 +1,20 @@
 /** @jsx createElement */
 import {createElement, Component} from 'react';
 import {Button} from 'semantic-ui-react';
-import autobind from 'autobind-decorator';
+import P from 'prop-types';
 
-@autobind class RadioButtons extends Component {
-  onClick(e, {value}) {
+export function Func() {}
+
+class RadioButtons extends Component {
+  static propTypes = {
+    name: P.string.isRequired,
+    onChange: P.func.isRequired,
+  };
+
+  onClick = (e, {value}) => {
     const {name, onChange} = this.props;
     onChange(e, {name, value});
-  }
+  };
 
   render() {
     const {value, options} = this.props;
