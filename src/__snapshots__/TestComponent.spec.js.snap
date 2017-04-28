@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`Component: TestComponent sample test 1`] = `
 <div>
   foo

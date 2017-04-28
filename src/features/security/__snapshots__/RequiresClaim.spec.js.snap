@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`Component: RequiresClaim should render component when user has claim 1`] = `
 <div>
   Child Component
