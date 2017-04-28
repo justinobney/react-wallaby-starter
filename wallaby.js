@@ -18,6 +18,9 @@ module.exports = function(wallaby) {
     env: {
       type: 'node',
       runner: 'node',
+      params: {
+        env: `NODE_PATH=src`,
+      },
     },
     compilers: {
       '**/*.js?(x)': wallaby.compilers.babel({

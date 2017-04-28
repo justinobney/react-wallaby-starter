@@ -5,7 +5,7 @@ import {Link, NavLink} from 'react-router-dom';
 import {Icon, Menu} from 'semantic-ui-react';
 import {connect} from 'react-redux';
 import glamorous from 'glamorous';
-import {colors} from '../styles';
+import {colors} from 'styles';
 import {APP_NAME} from 'constants';
 
 const MenuWrapper = glamorous(Menu)({

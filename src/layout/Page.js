@@ -2,7 +2,7 @@
 import {createElement} from 'react';
 import {Container, Dimmer, Loader, Header} from 'semantic-ui-react';
 import glamorous from 'glamorous';
-import {contentBase} from '../styles';
+import {contentBase} from 'styles';
 
 const DimmableWrapper = glamorous(Dimmer.Dimmable)({
   ...contentBase,

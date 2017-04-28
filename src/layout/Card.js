@@ -2,7 +2,7 @@
 import {createElement} from 'react';
 import {Container, Header} from 'semantic-ui-react';
 import glamorous from 'glamorous';
-import {colors, contentBase} from '../styles';
+import {colors, contentBase} from 'styles';
 
 const Wrapper = glamorous(Container)(contentBase);
 const Title = glamorous(Header)({
