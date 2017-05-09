@@ -1,10 +1,6 @@
 import Card from './Card';
 import React from 'react';
 import {create} from 'react-test-renderer';
-import {matcher, serializer} from 'jest-glamor-react';
-
-expect.addSnapshotSerializer(serializer);
-expect.extend(matcher);
 
 describe('Component: Card', () => {
   it('should render with title and children', () => {

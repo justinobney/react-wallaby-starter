@@ -5,7 +5,7 @@ module.exports = function(wallaby) {
     path.delimiter +
     path.join(__dirname, 'node_modules') +
     path.delimiter +
-    path.join(__dirname, 'node_modules/custom-react-scripts/node_modules');
+    path.join(__dirname, 'node_modules/react-scripts/node_modules');
 
   require('module').Module._initPaths();
 
@@ -34,13 +34,13 @@ module.exports = function(wallaby) {
     },
     setup: wallaby => {
       wallaby.testFramework.configure({
-        // as in node_modules/custom-react-scripts/utils/createJestConfig.js
+        // as in node_modules/react-scripts/utils/createJestConfig.js
         moduleNameMapper: {
           '^.+\\.(jpg|jpeg|png|gif|svg)$': require.resolve(
-            'custom-react-scripts/config/jest/fileTransform.js'
+            'react-scripts/config/jest/fileTransform.js'
           ),
           '^.+\\.(scss|css)$': require.resolve(
-            'custom-react-scripts/config/jest/cssTransform.js'
+            'react-scripts/config/jest/cssTransform.js'
           ),
         },
       });

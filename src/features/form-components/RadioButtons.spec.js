@@ -10,7 +10,14 @@ describe('Component: RadioButtons', () => {
       {value: 15, label: '15'},
     ];
 
-    const tree = create(<RadioButtons options={options} value={5} />).toJSON();
+    const tree = create(
+      <RadioButtons
+        name="test"
+        options={options}
+        value={5}
+        onChange={Function()} // eslint-disable-line
+      />
+    ).toJSON();
 
     expect(tree).toMatchSnapshot();
   });
@@ -22,7 +29,9 @@ describe('Component: RadioButtons', () => {
       {value: 15, label: '15'},
     ];
 
-    const tree = create(<RadioButtons options={options} />).toJSON();
+    const tree = create(
+      <RadioButtons options={options} name="test" onChange={Function()} /> // eslint-disable-line
+    ).toJSON();
 
     expect(tree).toMatchSnapshot();
   });
