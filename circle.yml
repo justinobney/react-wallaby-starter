@@ -4,6 +4,8 @@ machine:
 
   environment:
     PATH: "${PATH}:${HOME}/${CIRCLE_PROJECT_REPONAME}/node_modules/.bin"
+    TEST_REPORT_PATH: $CIRCLE_TEST_REPORTS
+    TEST_REPORT_FILENAME: test-results.xml
 
 dependencies:
   override:
@@ -13,7 +15,4 @@ dependencies:
 
 test:
   override:
-    - yarn test
-      environment:
-          JUNIT_REPORT_PATH: $CIRCLE_TEST_REPORTS/junit/
-          JUNIT_REPORT_NAME: test-results.xml
+    - yarn test:ci
