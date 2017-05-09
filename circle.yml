@@ -14,3 +14,6 @@ dependencies:
 test:
   override:
     - yarn test
+      environment:
+          JUNIT_REPORT_PATH: $CIRCLE_TEST_REPORTS/junit/
+          JUNIT_REPORT_NAME: test-results.xml
