@@ -1,15 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`Component: Card should allow skipping title 1`] = `
 <div
-  className="ui container css-j7k7y6">
+  className="ui container css-j7k7y6"
+>
   Content
 </div>
 `;
 
 exports[`Component: Card should render with title and children 1`] = `
 <div
-  className="ui container css-j7k7y6">
+  className="ui container css-j7k7y6"
+>
   <h1
-    className="ui header css-y2vsc">
+    className="ui header css-y2vsc"
+  >
     Title
   </h1>
   Content

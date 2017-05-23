@@ -15,7 +15,7 @@ import reducers from './store';
 import App from './App';
 
 import 'semantic-ui-css/semantic.css';
-import './index.scss';
+import './index.css';
 
 const history = createHistory();
 const historyMiddleware = routerMiddleware(history);
@@ -25,7 +25,7 @@ const store = createStore(
     ...reducers,
     router: routerReducer,
   }),
-  composeEnhancers(applyMiddleware(historyMiddleware, thunk)),
+  composeEnhancers(applyMiddleware(historyMiddleware, thunk))
 );
 
 const rootEl = document.getElementById('root');
@@ -36,7 +36,7 @@ render(
       <App />
     </ConnectedRouter>
   </Provider>,
-  rootEl,
+  rootEl
 );
 
 if (module.hot) {
@@ -48,7 +48,7 @@ if (module.hot) {
           <NextApp />
         </ConnectedRouter>
       </Provider>,
-      rootEl,
+      rootEl
     );
   });
 }

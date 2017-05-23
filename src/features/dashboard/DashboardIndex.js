@@ -36,7 +36,7 @@ const Section1 = () => (
           </Table.Cell>
           <Table.Cell textAlign="right">
             80% <br />
-            <a href="#">18 studies</a>
+            <a>18 studies</a>
           </Table.Cell>
           <Table.Cell>
             Creatine supplementation is the reference compound for increasing muscular creatine levels; there is
@@ -53,7 +53,7 @@ const Section1 = () => (
           </Table.Cell>
           <Table.Cell textAlign="right">
             100% <br />
-            <a href="#">65 studies</a>
+            <a>65 studies</a>
           </Table.Cell>
           <Table.Cell>
             Creatine is the reference compound for power improvement, with numbers from one meta-analysis to assess

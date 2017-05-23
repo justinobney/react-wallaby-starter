@@ -1,6 +1,7 @@
-import Card from './Card';
 import React from 'react';
 import {create} from 'react-test-renderer';
+
+import Card from './Card';
 
 describe('Component: Card', () => {
   it('should render with title and children', () => {
