@@ -15,7 +15,7 @@
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "jest-junit-reporter": "^1.1.0",
-    "react-app-rewire-sass": "^1.2.2",
+    "react-app-rewire-sass": "^1.2.3",
     "react-app-rewired": "^0.6.5",
     "react-scripts": "^0.9.5",
     "react-test-renderer": "^15.5.4"
@@ -23,15 +23,15 @@
   "dependencies": {
     "axios": "^0.16.1",
     "glamor": "^2.20.25",
-    "glamorous": "^3.13.3",
-    "prop-types": "^15.5.8",
+    "glamorous": "^3.15.1",
+    "prop-types": "^15.5.10",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
-    "react-redux": "^5.0.3",
+    "react-redux": "^5.0.5",
     "react-router-dom": "^4.0.0",
     "react-router-redux": "^5.0.0-alpha.6",
     "redux": "^3.6.0",
-    "redux-actions": "^2.0.1",
+    "redux-actions": "^2.0.3",
     "redux-thunk": "^2.2.0",
     "semantic-ui-css": "^2.2.9",
     "semantic-ui-react": "^0.68.3",
@@ -54,7 +54,10 @@
         "warn",
         "always"
       ],
-      "indent": ["error", 2],
+      "indent": [
+        "error",
+        2
+      ],
       "comma-dangle": [
         "error",
         "always-multiline"
