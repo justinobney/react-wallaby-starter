@@ -39,6 +39,7 @@ module.exports = function(wallaby) {
             'react-scripts/config/jest/cssTransform.js'
           ),
         },
+        moduleDirectories: ['node_modules', 'src'],
       });
     },
     testFramework: 'jest',
