@@ -6,6 +6,7 @@
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-preset-latest": "^6.24.1",
+    "cross-env": "^5.0.0",
     "jest-glamor-react": "^1.3.0",
     "jest-junit-reporter": "^1.1.0",
     "react-scripts": "1.0.5",
@@ -33,6 +34,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
+    "test:ci": "cross-env CI=true react-scripts test --env=jsdom --testResultsProcessor=jest-junit-reporter",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
