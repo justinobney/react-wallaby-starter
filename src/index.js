@@ -15,7 +15,7 @@ import reducers from './store';
 import App from './App';
 
 import 'semantic-ui-css/semantic.css';
-import './index.css';
+import './styles/index.css';
 
 const history = createHistory();
 const historyMiddleware = routerMiddleware(history);

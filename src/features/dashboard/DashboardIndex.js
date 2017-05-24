@@ -1,7 +1,7 @@
 /** @jsx createElement */
 import {createElement} from 'react';
 import {Header, Rating, Table} from 'semantic-ui-react';
-import Card from 'layout/Card';
+import Card from 'features/layout/Card';
 import RequiresClaim from 'features/security/RequiresClaim';
 import {Col} from 'styles';
 

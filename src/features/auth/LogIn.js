@@ -7,7 +7,7 @@ import {Redirect} from 'react-router-dom';
 
 import {APP_NAME} from 'constants';
 import {actions} from 'store';
-import AppFooter from 'layout/AppFooter';
+import AppFooter from 'features/layout/AppFooter';
 
 export class LogIn extends Component {
   componentWillMount() {

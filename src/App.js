@@ -2,12 +2,11 @@
 import {createElement, Component} from 'react';
 import {withRouter} from 'react-router';
 import {Route, Switch} from 'react-router-dom';
+import glamorous from 'glamorous';
 
-import MainLayout from 'layout/MainLayout';
+import MainLayout from 'features/layout/MainLayout';
 import PrivateRoute from 'features/security/PrivateRoute';
 import LogIn from 'features/auth/LogIn';
-
-import glamorous from 'glamorous';
 
 const Wrapper = glamorous.div({
   display: 'flex',
