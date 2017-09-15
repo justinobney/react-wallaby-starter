@@ -1,5 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Component: PrivateRoute should render component when user has claim 1`] = `<div />`;
+exports[`Component: PrivateRoute should render component when user exists 1`] = `<div />`;
 
-exports[`Component: PrivateRoute should render null when user does not have claim 1`] = `null`;
+exports[`Component: PrivateRoute should render null when user does not exist 1`] = `null`;

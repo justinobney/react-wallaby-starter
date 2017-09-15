@@ -1,31 +1,23 @@
-/** @jsx createElement */
-import {createElement} from 'react';
-import glamorous from 'glamorous';
-import {Anchor} from 'styles';
+import React from 'react';
+import styled from 'styled-components';
 
-const Footer = glamorous.footer({
-  textAlign: 'center',
-  paddingBottom: 10,
-});
+import {COMPANY_NAME} from 'constants.js';
 
-const SupportBar = glamorous.p({
-  marginBottom: 10,
-});
+const Footer = styled.footer`
+  text-align: center;
+  padding-bottom: 10px;
 
-const Copyright = glamorous.p({});
+  .support {
+    margin-bottom: 10px;
+  }
+`;
 
 const AppFooter = () => (
   <Footer>
-    <SupportBar>
-      Call
-      {' '}
-      <Anchor href="tel:1-800-551-8900">1-800-551-8900</Anchor>
-      {' '}
-      for support.
-    </SupportBar>
-    <Copyright>
-      {`© Elevator2, LLC ${new Date().getFullYear()}. All Rights Reserved.`}
-    </Copyright>
+    <p className="support">Call 1-800-551-8900 for support.</p>
+    <p>
+      {`© ${COMPANY_NAME} ${new Date().getFullYear()}. All Rights Reserved.`}
+    </p>
   </Footer>
 );
 

@@ -1,32 +1,20 @@
-/** @jsx createElement */
-import {createElement} from 'react';
+// polyfills for browser
+import 'core-js/es6/symbol';
+// =====================
+
+import React from 'react';
 import {render} from 'react-dom';
-import {combineReducers, createStore, applyMiddleware, compose} from 'redux';
 import {Provider} from 'react-redux';
-import {
-  ConnectedRouter,
-  routerReducer,
-  routerMiddleware,
-} from 'react-router-redux';
-import thunk from 'redux-thunk';
+import {ConnectedRouter} from 'react-router-redux';
 import createHistory from 'history/createBrowserHistory';
 
-import reducers from './store';
+import createStore from './store';
 import App from './App';
 
-import 'semantic-ui-css/semantic.css';
-import './styles/index.css';
+import './styles/imports';
 
 const history = createHistory();
-const historyMiddleware = routerMiddleware(history);
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store = createStore(
-  combineReducers({
-    ...reducers,
-    router: routerReducer,
-  }),
-  composeEnhancers(applyMiddleware(historyMiddleware, thunk))
-);
+const store = createStore(history);
 
 const rootEl = document.getElementById('root');
 

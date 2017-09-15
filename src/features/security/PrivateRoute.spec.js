@@ -6,28 +6,21 @@ import {PrivateRoute} from './PrivateRoute';
 const RouteComponent = () => <div />;
 
 describe('Component: PrivateRoute', () => {
-  it('should render component when user has claim', () => {
+  it('should render component when user exists', () => {
     const tree = create(
       <MemoryRouter initialEntries={['/app']} initialIndex={1}>
-        <PrivateRoute
-          claim="users/modify"
-          path="/app"
-          user={{}}
-          claims={['users/modify']}
-          component={RouteComponent}
-        />
+        <PrivateRoute path="/app" user={{}} component={RouteComponent} />
       </MemoryRouter>
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
-  it('should render null when user does not have claim', () => {
+  it('should render null when user does not exist', () => {
     const tree = create(
       <MemoryRouter initialEntries={['/app']} initialIndex={1}>
         <PrivateRoute
           claim="users/modify"
           path="/app"
-          user={{}}
           claims={[]}
           component={RouteComponent}
         />

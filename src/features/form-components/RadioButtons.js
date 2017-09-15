@@ -1,5 +1,4 @@
-/** @jsx createElement */
-import {createElement, Component} from 'react';
+import React, {Component} from 'react';
 import {Button} from 'semantic-ui-react';
 import P from 'prop-types';
 

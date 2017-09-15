@@ -1,12 +1,10 @@
-/** @jsx createElement */
-import {createElement} from 'react';
+import React from 'react';
 import {Form} from 'semantic-ui-react';
-import glamorous from 'glamorous';
-import {colors} from 'styles';
+import styled from 'styled-components';
 
-const ErrorList = glamorous.ul({
-  color: colors.errorText,
-});
+import {colors} from 'styles/semantic';
+
+const ErrorList = styled.ul`color: ${colors.errorText};`;
 
 const ErrorAwareField = ({errors = [], children, ...rest}) => {
   const showErrors = errors.length > 0;
@@ -15,7 +13,11 @@ const ErrorAwareField = ({errors = [], children, ...rest}) => {
       {children}
       {showErrors &&
         <ErrorList>
-          {errors.map(x => <li key={x}>{x}</li>)}
+          {errors.map(x =>
+            <li key={x}>
+              {x}
+            </li>
+          )}
         </ErrorList>}
     </Form.Field>
   );

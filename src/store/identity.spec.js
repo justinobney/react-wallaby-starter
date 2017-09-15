@@ -20,13 +20,11 @@ describe('Store: identity', () => {
       const expectedState = {
         loading: false,
         user: {name: 'justin'},
-        claims: ['dashboard/view', 'users/modify'],
       };
       const nextState = reducer(initialState, {
         type: login.resolved,
         payload: {
           name: 'justin',
-          claims: ['dashboard/view', 'users/modify'],
         },
       });
       expect(expectedState).toEqual(nextState);

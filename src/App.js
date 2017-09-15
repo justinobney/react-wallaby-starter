@@ -1,29 +1,34 @@
-/** @jsx createElement */
-import {createElement, Component} from 'react';
+import React, {Component} from 'react';
+import {Route, Redirect, Switch} from 'react-router-dom';
 import {withRouter} from 'react-router';
-import {Route, Switch} from 'react-router-dom';
-import glamorous from 'glamorous';
 
-import MainLayout from 'features/layout/MainLayout';
 import PrivateRoute from 'features/security/PrivateRoute';
-import LogIn from 'features/auth/LogIn';
+import AppHeader from 'features/layout/AppHeader';
+import DashboardIndex from 'features/dashboard/DashboardIndex';
+import AuthRoutes from 'features/auth/Routes';
+import {Flex} from 'styles';
+import SemanticTheme from 'styles/semantic';
 
-const Wrapper = glamorous.div({
-  display: 'flex',
-  minHeight: '100vh',
-  flexDirection: 'column',
-  paddingTop: 100,
-});
+const MainLayout = () => (
+  <SemanticTheme type="column">
+    <AppHeader />
+    <Flex>
+      <Switch>
+        <Route exact path="/dashboard" component={DashboardIndex} />
+        <Redirect to="/dashboard" />
+      </Switch>
+    </Flex>
+  </SemanticTheme>
+);
 
 class App extends Component {
   render() {
     return (
-      <Wrapper>
-        <Switch>
-          <Route path="/auth/login" component={LogIn} />
-          <PrivateRoute path="/" component={MainLayout} />
-        </Switch>
-      </Wrapper>
+      <Switch>
+        <Route path="/auth" component={AuthRoutes} />
+        <PrivateRoute path="/" component={MainLayout} />
+        <Redirect to="/" />
+      </Switch>
     );
   }
 }

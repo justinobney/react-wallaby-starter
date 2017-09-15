@@ -1,11 +1,14 @@
+import {combineReducers, createStore, applyMiddleware, compose} from 'redux';
+import {routerReducer, routerMiddleware} from 'react-router-redux';
+import thunk from 'redux-thunk';
 import identity from './identity';
 
 const rootReducer = {
   identity,
 };
 
-const actions = exportReducerProp('actionCreators');
-const selectors = exportReducerProp('selectors');
+export const actions = exportReducerProp('actionCreators');
+export const selectors = exportReducerProp('selectors');
 
 function exportReducerProp(propName) {
   return Object.keys(rootReducer).reduce((result, key) => {
@@ -14,5 +17,15 @@ function exportReducerProp(propName) {
   }, {});
 }
 
-export {actions, selectors};
-export default rootReducer;
+export default function finalCreateStore(history) {
+  const historyMiddleware = routerMiddleware(history);
+  const composeEnhancers =
+    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+  return createStore(
+    combineReducers({
+      ...rootReducer,
+      router: routerReducer,
+    }),
+    composeEnhancers(applyMiddleware(historyMiddleware, thunk))
+  );
+}

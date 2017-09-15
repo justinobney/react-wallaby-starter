@@ -1,29 +1,24 @@
-/** @jsx createElement */
-import {createElement} from 'react';
+import React, {createElement} from 'react';
 import {Redirect, Route} from 'react-router-dom';
 import {connect} from 'react-redux';
 
-export const PrivateRoute = ({
-  claim,
-  component,
-  claims = [],
-  user,
-  ...rest
-}) => {
-  const canRoute = !!claim ? claims.indexOf(claim) > -1 : !!user;
+export const PrivateRoute = ({component, user, ...rest}) => {
+  const canRoute = !!user;
 
   return (
     <Route
       {...rest}
       render={props =>
-        (canRoute
-          ? createElement(component, props)
-          : <Redirect
-              to={{
-                pathname: '/auth/login',
-                state: {from: props.location},
-              }}
-            />)}
+        canRoute ? (
+          createElement(component, props)
+        ) : (
+          <Redirect
+            to={{
+              pathname: '/auth/login',
+              state: {from: props.location},
+            }}
+          />
+        )}
     />
   );
 };
@@ -31,7 +26,6 @@ export const PrivateRoute = ({
 const mapStateToProps = state => {
   return {
     user: state.identity.user,
-    claims: state.identity.claims,
   };
 };
 

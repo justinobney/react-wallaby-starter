@@ -3,8 +3,9 @@
 ## Tech Stack
 
 * ReactJS (created with create-react-app)
-    * also using: custom-react-scripts (needs `.env` file)
+* styled-components
 * Semantic UI - React Bindings
+  * simple theming via styled-components
 * react-router v4
 * redux
     * redux-actions
@@ -14,7 +15,7 @@
 
 ## Setup
 
-** run from `TC3.Web` directory
+** run from `Web` directory
 
 * `yarn` - to install dependencies
 * `yarn start` - start development server

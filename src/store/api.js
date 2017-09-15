@@ -1,30 +1,54 @@
 import axios from 'axios';
+import {objectMap} from 'features/validation';
 
 const instance = axios.create({
-  baseURL: 'http://localhost:14210/api',
+  baseURL: '/api',
   timeout: 10000,
 });
 
-// simply sugar for more common usage. If you want more control,
-// pull in the "instance" into consuming code and use.
 const helper = {
   async get(url, params) {
-    const {data} = await instance.get(url, {params});
-    return data;
+    try {
+      const {data} = await instance.get(url, {params});
+      return data;
+    } catch (error) {
+      throw error;
+    }
   },
   async post(url, payload) {
-    const {data} = await instance.post(url, payload); // pass through until developed
-    return data;
+    try {
+      const {data} = await instance.post(url, payload);
+      return data;
+    } catch (error) {
+      return formatErrorResult(error);
+    }
   },
   async put(url, ...rest) {
-    const {data} = await instance.put(url, ...rest); // pass through until developed
-    return data;
+    try {
+      const {data} = await instance.put(url, ...rest);
+      return data;
+    } catch (error) {
+      return formatErrorResult(error);
+    }
   },
   async delete(url, ...rest) {
-    const {data} = await instance.delete(url, ...rest); // pass through until developed
-    return data;
+    try {
+      const {data} = await instance.delete(url, ...rest);
+      return data;
+    } catch (error) {
+      return formatErrorResult(error);
+    }
   },
 };
+
+function formatErrorResult({response}) {
+  const {result, hasErrors, errors} = response.data;
+  return {
+    result,
+    hasErrors,
+    errors: objectMap(errors),
+  };
+}
 
 export default helper;
 export {instance};

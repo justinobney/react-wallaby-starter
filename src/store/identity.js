@@ -6,17 +6,7 @@ const initialState = {
   loading: false,
 };
 
-const selectors = {
-  destructureUserFromClaims: user => {
-    const {claims, ...rest} = user;
-    return {
-      user: {
-        ...rest,
-      },
-      claims,
-    };
-  },
-};
+// const selectors = {};
 
 const actionCreators = {
   login: thunkCreator({
@@ -28,7 +18,6 @@ const actionCreators = {
               firstName: 'Justin',
               lastName: 'Obney',
               username: 'justinobney',
-              claims: ['dashboard/view', 'users/modify'],
             }),
           1000
         );
@@ -45,7 +34,9 @@ const handlers = {
   }),
   [actionCreators.login.resolved]: (state, action) => ({
     ...state,
-    ...selectors.destructureUserFromClaims(action.payload),
+    user: {
+      ...action.payload,
+    },
     loading: false,
   }),
   [actionCreators.login.rejected]: (state, action) => ({

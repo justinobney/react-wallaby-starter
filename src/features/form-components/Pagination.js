@@ -1,5 +1,4 @@
-/** @jsx createElement */
-import {createElement, Component} from 'react';
+import React, {Component} from 'react';
 import {Menu} from 'semantic-ui-react';
 import paginate from 'simple-pagination';
 
@@ -22,15 +21,14 @@ export default class MenuExamplePagination extends Component {
 
     return (
       <Menu pagination>
-        {pages.map((page, idx) => (
+        {pages.map((page, idx) =>
           <Menu.Item
             key={idx}
             name={`${idx + 1}`}
             active={idx + 1 === pagination.currentPage}
             onClick={() => onPageChange(idx + 1)}
           />
-        ))}
-
+        )}
       </Menu>
     );
   }
