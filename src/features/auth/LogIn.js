@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
 import {Link} from 'react-router-dom';
 import {Redirect} from 'react-router-dom';
 import styled from 'styled-components';
 import {Button, Form, Container, Header, Segment} from 'semantic-ui-react';
+import {withActions, isBusy} from 'actionware';
+import {login} from 'store/identity';
 
 import {APP_NAME} from 'constants.js';
-import {actions} from 'store';
 import AppFooter from 'features/layout/AppFooter';
 
 const Wrapper = styled.div`margin-top: 100px;`;
@@ -24,7 +24,7 @@ export class LogIn extends Component {
     this.props.login();
   };
   render() {
-    const {identity, state = {}} = this.props;
+    const {loading, user, state = {}} = this.props;
 
     const pathname =
       state.from && state.from.pathname ? state.from.pathname : '/';
@@ -36,7 +36,7 @@ export class LogIn extends Component {
             <Header textAlign="center" attached="top" inverted>
               Welcome to {APP_NAME}
             </Header>
-            <FormWrapper attached loading={identity.loading}>
+            <FormWrapper attached loading={loading}>
               <Form onSubmit={this._handleLogin}>
                 <Form.Field>
                   <label>Email Address</label>
@@ -56,25 +56,28 @@ export class LogIn extends Component {
             </FormWrapper>
           </BoxShadow>
           <AppFooter />
-          {identity.user &&
+          {user && (
             <Redirect
               to={{
                 pathname: '/router',
                 state: {to: pathname},
               }}
-            />}
+            />
+          )}
         </Container>
       </Wrapper>
     );
   }
 }
 
-const mapStateToProps = ({identity, router}) => ({
-  identity,
-  state: router.location.state,
-});
+const mapStateToProps = ({identity, router}) => {
+  return {
+    user: identity.user,
+    state: router.location.state,
+    login: login,
+    loading: isBusy(login),
+  };
+};
 
-const mapDispatchToProps = dispatch =>
-  bindActionCreators(actions.identity, dispatch);
-
-export default connect(mapStateToProps, mapDispatchToProps)(LogIn);
+const LogInWithActions = withActions({login})(LogIn);
+export default connect(mapStateToProps)(LogInWithActions);

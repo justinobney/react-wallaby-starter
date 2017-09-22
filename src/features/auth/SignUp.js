@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
 import {Link} from 'react-router-dom';
 import {Redirect} from 'react-router-dom';
 import styled from 'styled-components';
 import {Button, Form, Container, Header, Segment} from 'semantic-ui-react';
+import {withActions, isBusy} from 'actionware';
+import {login} from 'store/identity';
 
-import {actions} from 'store';
 import AppFooter from 'features/layout/AppFooter';
 
 const Wrapper = styled.div`margin-top: 100px;`;
@@ -23,7 +23,7 @@ export class SignUp extends Component {
     this.props.login();
   };
   render() {
-    const {identity} = this.props;
+    const {loading, user} = this.props;
 
     return (
       <Wrapper>
@@ -32,7 +32,7 @@ export class SignUp extends Component {
             <Header textAlign="center" attached="top" inverted>
               Sign up for a new account!
             </Header>
-            <FormWrapper attached loading={identity.loading}>
+            <FormWrapper attached loading={loading}>
               <Form onSubmit={this._handleSignup}>
                 <Form.Field>
                   <label>Email Address</label>
@@ -52,18 +52,21 @@ export class SignUp extends Component {
             </FormWrapper>
           </BoxShadow>
           <AppFooter />
-          {identity.user && <Redirect to="/" />}
+          {user && <Redirect to="/" />}
         </Container>
       </Wrapper>
     );
   }
 }
 
-const mapStateToProps = state => ({
-  identity: state.identity,
-});
+const mapStateToProps = ({identity, router}) => {
+  return {
+    user: identity.user,
+    state: router.location.state,
+    login: login,
+    loading: isBusy(login),
+  };
+};
 
-const mapDispatchToProps = dispatch =>
-  bindActionCreators(actions.identity, dispatch);
-
-export default connect(mapStateToProps, mapDispatchToProps)(SignUp);
+const SignUpWithActions = withActions({login})(SignUp);
+export default connect(mapStateToProps)(SignUpWithActions);

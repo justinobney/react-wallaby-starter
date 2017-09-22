@@ -1,52 +1,30 @@
-import {handleActions} from 'redux-actions';
-import {thunkCreator} from './util';
+import {createReducer} from 'actionware';
 
 const initialState = {
   user: null,
-  loading: false,
 };
 
-// const selectors = {};
+export function login() {
+  return new Promise((resolve, reject) => {
+    setTimeout(
+      () =>
+        resolve({
+          firstName: 'Justin',
+          lastName: 'Obney',
+          username: 'justinobney',
+        }),
+      1000
+    );
+  });
+}
 
-const actionCreators = {
-  login: thunkCreator({
-    async promise() {
-      return new Promise((resolve, reject) => {
-        setTimeout(
-          () =>
-            resolve({
-              firstName: 'Justin',
-              lastName: 'Obney',
-              username: 'justinobney',
-            }),
-          1000
-        );
-      });
-    },
-    type: 'LOGIN',
-  }),
-};
+// export const selectors = {};
 
-const handlers = {
-  [actionCreators.login.requested]: (state, action) => ({
+const reducer = createReducer(initialState).on(login, (state, user) => {
+  return {
     ...state,
-    loading: true,
-  }),
-  [actionCreators.login.resolved]: (state, action) => ({
-    ...state,
-    user: {
-      ...action.payload,
-    },
-    loading: false,
-  }),
-  [actionCreators.login.rejected]: (state, action) => ({
-    ...state,
-    error: action.error,
-    loading: false,
-  }),
-};
-
-const reducer = handleActions(handlers, initialState);
-reducer.actionCreators = actionCreators;
+    user,
+  };
+});
 
 export default reducer;

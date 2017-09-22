@@ -1,45 +1,19 @@
-import reducer from './identity';
-
-const {login} = reducer.actionCreators;
+import {successType} from 'actionware';
+import reducer, {login} from './identity';
 
 describe('Store: identity', () => {
   describe('reducer', () => {
-    it(login.requested, () => {
+    it(successType(login), () => {
       const initialState = {};
       const expectedState = {
-        loading: true,
-      };
-      const nextState = reducer(initialState, {
-        type: login.requested,
-      });
-      expect(expectedState).toEqual(nextState);
-    });
-
-    it(login.resolved, () => {
-      const initialState = {};
-      const expectedState = {
-        loading: false,
-        user: {name: 'justin'},
-      };
-      const nextState = reducer(initialState, {
-        type: login.resolved,
-        payload: {
+        user: {
           name: 'justin',
         },
-      });
-      expect(expectedState).toEqual(nextState);
-    });
-
-    it(login.rejected, () => {
-      const initialState = {};
-      const expectedState = {
-        loading: false,
-        error: {message: 'some reason'},
       };
       const nextState = reducer(initialState, {
-        type: login.rejected,
-        error: {
-          message: 'some reason',
+        type: successType(login),
+        payload: {
+          name: 'justin',
         },
       });
       expect(expectedState).toEqual(nextState);
