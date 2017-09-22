@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "@storybook/addon-info": "^3.2.9",
+    "actionware": "^8.1.0",
     "axios": "^0.16.2",
     "core-js": "^2.5.1",
     "jest-styled-components": "^4.5.0",
