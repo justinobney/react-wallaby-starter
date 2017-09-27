@@ -1,5 +1,5 @@
 import {successType} from 'actionware';
-import reducer, {login} from './identity';
+import reducer, {login, logout} from './identity';
 
 describe('Store: identity', () => {
   describe('reducer', () => {
@@ -15,6 +15,21 @@ describe('Store: identity', () => {
         payload: {
           name: 'justin',
         },
+      });
+      expect(expectedState).toEqual(nextState);
+    });
+
+    it(successType(logout), () => {
+      const initialState = {
+        user: {
+          name: 'justin',
+        },
+      };
+      const expectedState = {
+        user: null,
+      };
+      const nextState = reducer(initialState, {
+        type: successType(logout),
       });
       expect(expectedState).toEqual(nextState);
     });
