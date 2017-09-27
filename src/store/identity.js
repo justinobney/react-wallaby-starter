@@ -4,27 +4,39 @@ const initialState = {
   user: null,
 };
 
-export function login() {
-  return new Promise((resolve, reject) => {
-    setTimeout(
-      () =>
+export async function login() {
+  const data = await api.get('url/foo');
+  return data;
+}
+
+export function logout() {
+  api.get('url/logout');
+}
+
+const reducer = createReducer(initialState)
+  .on(login, (state, user) => ({
+    ...state,
+    user,
+  }))
+  .on(logout, state => ({
+    ...state,
+    user: null,
+  }));
+
+const api = {
+  get() {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
         resolve({
           firstName: 'Justin',
           lastName: 'Obney',
           username: 'justinobney',
-        }),
-      1000
-    );
-  });
-}
+        });
 
-// export const selectors = {};
-
-const reducer = createReducer(initialState).on(login, (state, user) => {
-  return {
-    ...state,
-    user,
-  };
-});
+        // reject({message: 'foo error'});
+      }, 1000);
+    });
+  },
+};
 
 export default reducer;

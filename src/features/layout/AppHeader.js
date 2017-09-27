@@ -4,7 +4,9 @@ import {Link, NavLink} from 'react-router-dom';
 import {Container, Dropdown, Icon, Menu} from 'semantic-ui-react';
 import {connect} from 'react-redux';
 import styled from 'styled-components';
+import {withActions} from 'actionware';
 
+import {logout} from 'store/identity';
 import {fixed} from 'styles';
 import {APP_NAME} from 'constants.js';
 
@@ -24,7 +26,7 @@ const MenuWrapper = styled.div`
 
 const MenuTitle = styled.span`font-size: 18px;`;
 
-const AppHeader = ({identity}) => (
+const AppHeader = ({identity, logout}) => (
   <MenuWrapper>
     <Container>
       <Menu inverted size="massive">
@@ -45,6 +47,14 @@ const AppHeader = ({identity}) => (
               </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
+          <Dropdown
+            item
+            text={`${identity.user.firstName} ${identity.user.lastName}`}
+          >
+            <Dropdown.Menu>
+              <Dropdown.Item onClick={() => logout()}>Log Out</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
         </Menu.Menu>
       </Menu>
     </Container>
@@ -57,4 +67,5 @@ const mapStateToProps = state => {
   };
 };
 
-export default withRouter(connect(mapStateToProps)(AppHeader));
+const WithActions = withActions({logout})(AppHeader);
+export default withRouter(connect(mapStateToProps)(WithActions));

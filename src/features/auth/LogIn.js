@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {Link} from 'react-router-dom';
-import {Redirect} from 'react-router-dom';
+import {Link, Redirect} from 'react-router-dom';
 import styled from 'styled-components';
 import {Button, Form, Container, Header, Segment} from 'semantic-ui-react';
-import {withActions, isBusy} from 'actionware';
-import {login} from 'store/identity';
+import {withActions, isBusy, getError} from 'actionware';
 
+import {login} from 'store/identity';
 import {APP_NAME} from 'constants.js';
 import AppFooter from 'features/layout/AppFooter';
 
@@ -20,11 +19,8 @@ const FormWrapper = styled(Segment)`
 `;
 
 export class LogIn extends Component {
-  _handleLogin = () => {
-    this.props.login();
-  };
   render() {
-    const {loading, user, state = {}} = this.props;
+    const {loading, error, user, state = {}, login} = this.props;
 
     const pathname =
       state.from && state.from.pathname ? state.from.pathname : '/';
@@ -37,7 +33,7 @@ export class LogIn extends Component {
               Welcome to {APP_NAME}
             </Header>
             <FormWrapper attached loading={loading}>
-              <Form onSubmit={this._handleLogin}>
+              <Form onSubmit={login}>
                 <Form.Field>
                   <label>Email Address</label>
                   <input type="email" />
@@ -53,6 +49,7 @@ export class LogIn extends Component {
                   Sign Up
                 </Button>
               </Form>
+              {error && error.message}
             </FormWrapper>
           </BoxShadow>
           <AppFooter />
@@ -76,6 +73,7 @@ const mapStateToProps = ({identity, router}) => {
     state: router.location.state,
     login: login,
     loading: isBusy(login),
+    error: getError(login),
   };
 };
 
