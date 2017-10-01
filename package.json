@@ -3,9 +3,11 @@
   "version": "0.0.1",
   "scripts": {
     "start": "react-scripts start",
+    "now-start": "serve --single ./build",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "test:ci": "cross-env CI=true react-scripts test --env=jsdom --testResultsProcessor=jest-junit-reporter",
+    "test:ci":
+      "cross-env CI=true react-scripts test --env=jsdom --testResultsProcessor=jest-junit-reporter",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public"
@@ -13,20 +15,21 @@
   "private": true,
   "devDependencies": {
     "@storybook/react": "^3.2.8",
+    "@storybook/addon-info": "^3.2.9",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-latest": "^6.24.1",
     "cross-env": "^5.0.5",
     "jest-junit-reporter": "^1.1.0",
+    "jest-styled-components": "^4.5.0",
     "react-scripts": "^1.0.13",
-    "react-test-renderer": "^16.0.0"
+    "react-test-renderer": "^16.0.0",
+    "serve": "^6.2.0"
   },
   "dependencies": {
-    "@storybook/addon-info": "^3.2.9",
     "actionware": "^8.1.0",
     "axios": "^0.16.2",
     "core-js": "^2.5.1",
-    "jest-styled-components": "^4.5.0",
     "lodash": "^4.17.4",
     "prop-types": "^15.5.10",
     "react": "^16.0.0",
@@ -52,22 +55,10 @@
       "jasmine": true
     },
     "rules": {
-      "semi": [
-        "warn",
-        "always"
-      ],
-      "indent": [
-        "error",
-        2
-      ],
-      "comma-dangle": [
-        "error",
-        "always-multiline"
-      ],
-      "object-curly-spacing": [
-        "error",
-        "never"
-      ],
+      "semi": ["warn", "always"],
+      "indent": ["error", 2],
+      "comma-dangle": ["error", "always-multiline"],
+      "object-curly-spacing": ["error", "never"],
       "no-use-before-define": 0
     }
   }
