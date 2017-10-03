@@ -6,6 +6,7 @@ import PrivateRoute from 'features/security/PrivateRoute';
 import AppHeader from 'features/layout/AppHeader';
 import DashboardIndex from 'features/dashboard/DashboardIndex';
 import AuthRoutes from 'features/auth/Routes';
+import ExampleRoutes from 'features/examples/Routes';
 import {Flex} from 'styles';
 import SemanticTheme from 'styles/semantic';
 
@@ -15,6 +16,7 @@ const MainLayout = () => (
     <Flex>
       <Switch>
         <Route exact path="/dashboard" component={DashboardIndex} />
+        <Route path="/example" component={ExampleRoutes} />
         <Redirect to="/dashboard" />
       </Switch>
     </Flex>

@@ -40,10 +40,10 @@ const AppHeader = ({identity, logout}) => (
         </Menu.Item>
 
         <Menu.Menu position="right">
-          <Dropdown item text="Admin">
+          <Dropdown item text="Examples">
             <Dropdown.Menu>
-              <Dropdown.Item as={NavLink} to="/users">
-                Users
+              <Dropdown.Item as={NavLink} to="/example/form">
+                Form
               </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
