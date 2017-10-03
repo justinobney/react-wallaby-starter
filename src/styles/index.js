@@ -1,4 +1,5 @@
 import React from 'react';
+import AppFooter from 'features/layout/AppFooter';
 import styled, {css} from 'styled-components';
 import {Container, Header} from 'semantic-ui-react';
 
@@ -68,7 +69,10 @@ export const BasicPage = ({header, children}) => (
   <Layout type="column">
     <PageHeader>{header}</PageHeader>
     <Flex scroll padded>
-      <Container>{children}</Container>
+      <Container>
+        {children}
+        <AppFooter />
+      </Container>
     </Flex>
   </Layout>
 );

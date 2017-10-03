@@ -5,6 +5,7 @@ import {COMPANY_NAME} from 'constants.js';
 
 const Footer = styled.footer`
   text-align: center;
+  padding-top: 10px;
   padding-bottom: 10px;
 
   .support {
