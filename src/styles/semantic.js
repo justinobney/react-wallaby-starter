@@ -32,6 +32,18 @@ export const semantic = css`
         border-width: 2px;
       }
 
+      .dropdown,
+      .selection.dropdown {
+        border-width: 2px;
+
+        .menu {
+          border-width: 2px;
+          margin: 0px -2px;
+          min-width: calc(100% + 4px);
+          width: calc(100% + 4px);
+        }
+      }
+
       .react-tagsinput-tag {
         padding: 3px;
       }
