@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Button, Form, Header, Label, Segment} from 'semantic-ui-react';
 import {Link} from 'react-router-dom';
-import {BasicPage, Flex, Fill, Box} from 'styles';
+import {BasicPage, HeaderWithActions} from 'styles';
 import FormContainer from 'features/form-components/FormContainer';
 import ErrorAwareField from 'features/validation/ErrorAwareField';
 
@@ -132,15 +132,10 @@ class ExampleForm extends Component {
   };
 
   _renderHeader = () => (
-    <Flex>
-      <Fill>Example Form</Fill>
-      <Flex>
-        <Box>
-          <Label as="a" content="Mail" icon="mail" />
-          <Label as="a" content="People" icon="user" />
-        </Box>
-      </Flex>
-    </Flex>
+    <HeaderWithActions title="Example Form">
+      <Label as="a" color="teal" content="Mail" icon="mail" />
+      <Label as="a" color="teal" content="People" icon="user" />
+    </HeaderWithActions>
   );
 
   render() {

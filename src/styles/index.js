@@ -75,6 +75,17 @@ export const PageContent = styled.div`
   padding: 15px;
 `;
 
+export const HeaderWithActions = ({title, children}) => (
+  <Flex>
+    <Fill>{title}</Fill>
+    <Flex>
+      <Box>
+        {children}
+      </Box>
+    </Flex>
+  </Flex>
+);
+
 export const BasicPage = ({header, children}) => (
   <Layout type="column">
     <PageHeader>{header}</PageHeader>
