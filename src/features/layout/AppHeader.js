@@ -9,13 +9,21 @@ import {withActions} from 'actionware';
 import {logout} from 'store/identity';
 import {fixed} from 'styles';
 import {APP_NAME} from 'constants.js';
+import {colors} from 'styles/semantic';
 
 const MenuWrapper = styled.div`
   ${fixed};
-  background: #1b1c1d;
+
+  background-image: linear-gradient(
+    to right,
+    ${colors.blueDark} 0%,
+    ${colors.greenLight} 100%
+  );
+  background-repeat: repeat-x;
 
   .ui.menu.inverted {
     border-radius: 0;
+    background: transparent;
 
     .logo.item {
       align-items: flex-start;
