@@ -1,9 +1,68 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {Header, Rating, Table} from 'semantic-ui-react';
-import {BasicPage} from 'styles';
+import {LineChart, Line, ResponsiveContainer, Tooltip, XAxis} from 'recharts';
 
-const DashboardIndex = () => (
-  <BasicPage header="Dashboard">
+import {BasicPage, Flex} from 'styles';
+import {colors} from 'styles/semantic';
+import FormContainer from 'features/form-components/FormContainer';
+
+const data = [
+  {name: '11-1-17', uv: 4000, pv: 2400, amt: 2400},
+  {name: '11-2-17', uv: 3000, pv: 1398, amt: 2210},
+  {name: '11-3-17', uv: 2000, pv: 9800, amt: 2290},
+  {name: '11-4-17', uv: 2780, pv: 3908, amt: 2000},
+  {name: '11-5-17', uv: 1890, pv: 4800, amt: 2181},
+  {name: '11-6-17', uv: 2390, pv: 3800, amt: 2500},
+  {name: '11-7-17', uv: 3490, pv: 4300, amt: 2100},
+];
+
+const CustomizedAxisTick = ({x, y, stroke, payload}) => (
+  <g transform={`translate(${x},${y})`}>
+    <text
+      x={0}
+      y={0}
+      dy={16}
+      textAnchor="end"
+      fill="#666"
+      transform="rotate(-35)"
+    >
+      {payload.value}
+    </text>
+  </g>
+);
+
+class DashboardIndex extends Component {
+  _renderChart = () => (
+    <FormContainer>
+      <Header as="h2">Last 7 Days</Header>
+      <Flex style={{height: 150}}>
+        <ResponsiveContainer>
+          <LineChart
+            data={data}
+            onClick={(...args) => {
+              console.log(args);
+            }}
+          >
+            <XAxis
+              dataKey="name"
+              height={45}
+              padding={{left: 30, right: 30}}
+              tick={<CustomizedAxisTick />}
+            />
+            <Line
+              type="monotone"
+              dataKey="pv"
+              stroke={colors.greenDark}
+              strokeWidth={4}
+            />
+            <Tooltip />
+          </LineChart>
+        </ResponsiveContainer>
+      </Flex>
+    </FormContainer>
+  );
+
+  _renderTable = () => (
     <Table celled padded striped>
       <Table.Header>
         <Table.Row>
@@ -40,7 +99,16 @@ const DashboardIndex = () => (
         ))}
       </Table.Body>
     </Table>
-  </BasicPage>
-);
+  );
+
+  render() {
+    return (
+      <BasicPage header="Dashboard">
+        {this._renderChart()}
+        {this._renderTable()}
+      </BasicPage>
+    );
+  }
+}
 
 export default DashboardIndex;

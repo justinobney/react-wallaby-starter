@@ -9,6 +9,7 @@ const DimmableWrapper = styled(Dimmer.Dimmable)`
   border: solid 1px rgba(0, 0, 0, 0.1);
   padding: 20px;
   background: #fff;
+  margin-bottom: 10px;
 `;
 
 const FormContainer = ({children, loading, ...props}) => {
