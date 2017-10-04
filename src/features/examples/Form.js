@@ -56,16 +56,28 @@ class ExampleForm extends Component {
                 />
               </ErrorAwareField>
             </Form.Group>
-            <ErrorAwareField>
-              <Form.Select
-                id="example-form-gender"
-                name="gender"
-                label="Gender"
-                options={genderOptions}
-                value={user.gender}
-                placeholder="Gender"
-              />
-            </ErrorAwareField>
+            <Form.Group>
+              <ErrorAwareField width={8}>
+                <Form.Select
+                  id="example-form-gender"
+                  name="gender"
+                  label="Gender"
+                  options={genderOptions}
+                  value={user.gender}
+                  placeholder="Gender"
+                />
+              </ErrorAwareField>
+              <ErrorAwareField width={8}>
+                <Form.Input
+                  id="example-form-dob"
+                  name="dob"
+                  label="Date of Birth"
+                  placeholder="1/1/1999"
+                  value={user.dob}
+                  onChange={this._handleTextChanged}
+                />
+              </ErrorAwareField>
+            </Form.Group>
           </Segment>
           <Segment vertical>
             <Header as="h2">Address</Header>
@@ -88,33 +100,36 @@ class ExampleForm extends Component {
               />
             </ErrorAwareField>
             <Form.Group>
-              <Form.Input
-                id="example-form-city"
-                name="city"
-                label="City"
-                placeholder="Baton Rouge"
-                value={user.city}
-                onChange={this._handleTextChanged}
-                width={8}
-              />
-              <Form.Input
-                id="example-form-state"
-                name="state"
-                label="State"
-                placeholder="LA"
-                value={user.state}
-                onChange={this._handleTextChanged}
-                width={4}
-              />
-              <Form.Input
-                id="example-form-zipcode"
-                name="zipcode"
-                label="Zip Code"
-                placeholder="90210"
-                value={user.zipcode}
-                onChange={this._handleTextChanged}
-                width={4}
-              />
+              <ErrorAwareField width={8}>
+                <Form.Input
+                  id="example-form-city"
+                  name="city"
+                  label="City"
+                  placeholder="Baton Rouge"
+                  value={user.city}
+                  onChange={this._handleTextChanged}
+                />
+              </ErrorAwareField>
+              <ErrorAwareField width={4}>
+                <Form.Input
+                  id="example-form-state"
+                  name="state"
+                  label="State"
+                  placeholder="LA"
+                  value={user.state}
+                  onChange={this._handleTextChanged}
+                />
+              </ErrorAwareField>
+              <ErrorAwareField width={4}>
+                <Form.Input
+                  id="example-form-zipcode"
+                  name="zipcode"
+                  label="Zip Code"
+                  placeholder="90210"
+                  value={user.zipcode}
+                  onChange={this._handleTextChanged}
+                />
+              </ErrorAwareField>
             </Form.Group>
           </Segment>
           <ErrorAwareField />
