@@ -12,6 +12,14 @@ export const floating = css`
   z-index: 1;
 `;
 
+export const box = css`
+  display: flex;
+  align-items: ${props => props.align || 'center'};
+  ${props => (props.column ? column : row)};
+`;
+
+export const Box = styled.div`${box};`;
+
 export const layout = css`
   display: flex;
   flex: 1;
@@ -24,14 +32,16 @@ export const layout = css`
 `;
 export const Layout = styled.div`${layout};`;
 
-export const flex = css`
+export const Flex = styled.div`display: flex;`;
+
+export const fill = css`
   flex: 1;
   position: relative;
   ${props => props.scroll && css`overflow-y: auto;`};
   ${props => props.padded && css`padding: 15px;`};
 `;
 
-export const Flex = styled.div`${flex};`;
+export const Fill = styled.div`${fill};`;
 
 export const fixed = css`
   position: relative;
@@ -68,11 +78,11 @@ export const PageContent = styled.div`
 export const BasicPage = ({header, children}) => (
   <Layout type="column">
     <PageHeader>{header}</PageHeader>
-    <Flex scroll padded>
+    <Fill scroll padded>
       <Container>
         {children}
         <AppFooter />
       </Container>
-    </Flex>
+    </Fill>
   </Layout>
 );

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import {Button, Form, Header, Segment} from 'semantic-ui-react';
+import {Button, Form, Header, Label, Segment} from 'semantic-ui-react';
 import {Link} from 'react-router-dom';
-import {BasicPage} from 'styles';
+import {BasicPage, Flex, Fill, Box} from 'styles';
 import FormContainer from 'features/form-components/FormContainer';
 import ErrorAwareField from 'features/validation/ErrorAwareField';
 
@@ -31,7 +31,19 @@ class ExampleForm extends Component {
     const {user} = this.state;
 
     return (
-      <BasicPage header="Example Form">
+      <BasicPage
+        header={
+          <Flex>
+            <Fill>Example Form</Fill>
+            <Flex>
+              <Box>
+                <Label as="a" content="Mail" icon="mail" />
+                <Label as="a" content="People" icon="user" />
+              </Box>
+            </Flex>
+          </Flex>
+        }
+      >
         <FormContainer>
           <Form onSubmit={this._save} size="large" autoComplete="off">
             <Segment vertical>

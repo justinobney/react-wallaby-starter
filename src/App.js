@@ -7,19 +7,19 @@ import AppHeader from 'features/layout/AppHeader';
 import DashboardIndex from 'features/dashboard/DashboardIndex';
 import AuthRoutes from 'features/auth/Routes';
 import ExampleRoutes from 'features/examples/Routes';
-import {Flex} from 'styles';
+import {Fill} from 'styles';
 import SemanticTheme from 'styles/semantic';
 
 const MainLayout = () => (
   <SemanticTheme type="column">
     <AppHeader />
-    <Flex>
+    <Fill>
       <Switch>
         <Route exact path="/dashboard" component={DashboardIndex} />
         <Route path="/example" component={ExampleRoutes} />
         <Redirect to="/dashboard" />
       </Switch>
-    </Flex>
+    </Fill>
   </SemanticTheme>
 );
 
