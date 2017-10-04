@@ -75,5 +75,13 @@
       ],
       "no-use-before-define": 0
     }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "tabWidth": 4,
+    "parser": "babylon",
+    "singleQuote": true,
+    "semi": true,
+    "trailingComma": "es5"
   }
 }
