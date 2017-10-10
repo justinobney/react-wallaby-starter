@@ -1,5 +1,13 @@
 import React, {Component} from 'react';
-import {Button, Form, Header, Label, Segment} from 'semantic-ui-react';
+import {
+  Button,
+  Form,
+  Header,
+  Icon,
+  Modal,
+  Popup,
+  Segment,
+} from 'semantic-ui-react';
 import {Link} from 'react-router-dom';
 import {BasicPage, HeaderWithActions} from 'styles';
 import FormContainer from 'features/form-components/FormContainer';
@@ -16,6 +24,7 @@ class ExampleForm extends Component {
       firstName: '',
       lastName: '',
     },
+    modalOpen: false,
   };
 
   _handleTextChanged = (event, {name, value}) => {
@@ -148,14 +157,55 @@ class ExampleForm extends Component {
 
   _renderHeader = () => (
     <HeaderWithActions title="Example Form">
-      <Label as="a" color="teal" content="Mail" icon="mail" />
-      <Label as="a" color="teal" content="People" icon="user" />
+      <Popup
+        trigger={
+          <Button
+            basic
+            primary
+            onClick={() => this.setState({modalOpen: true})}
+            icon="add user"
+          />
+        }
+        content="Assign Request"
+        position="bottom center"
+        inverted
+        on={['hover', 'click']}
+      />
     </HeaderWithActions>
   );
 
   render() {
     return (
-      <BasicPage header={this._renderHeader()}>{this._renderForm()}</BasicPage>
+      <BasicPage header={this._renderHeader()}>
+        {this._renderForm()}
+        <Modal
+          open={this.state.modalOpen}
+          onClose={() => this.setState({modalOpen: false})}
+          basic
+          size="small"
+        >
+          <Header icon="browser" content="Assign Request" />
+          <Modal.Content>
+            <h3>You will no longer have access to this.</h3>
+          </Modal.Content>
+          <Modal.Actions>
+            <Button
+              color="green"
+              onClick={() => this.setState({modalOpen: false})}
+              inverted
+            >
+              <Icon name="checkmark" /> Got it
+            </Button>
+            <Button
+              color="red"
+              onClick={() => this.setState({modalOpen: false})}
+              inverted
+            >
+              <Icon name="close" /> Nevermind
+            </Button>
+          </Modal.Actions>
+        </Modal>
+      </BasicPage>
     );
   }
 }

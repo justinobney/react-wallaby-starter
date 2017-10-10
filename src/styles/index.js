@@ -75,13 +75,23 @@ export const PageContent = styled.div`
   padding: 15px;
 `;
 
+export const HeaderActions = styled.div`
+  ${box};
+
+  .ui.header & {
+    .button.icon:only-child {
+      display: block;
+      padding: 0.78571429em;
+      margin-right: 0em !important;
+    }
+  }
+`;
+
 export const HeaderWithActions = ({title, children}) => (
   <Flex>
     <Fill>{title}</Fill>
     <Flex>
-      <Box>
-        {children}
-      </Box>
+      <HeaderActions>{children}</HeaderActions>
     </Flex>
   </Flex>
 );
