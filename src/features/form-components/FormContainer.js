@@ -24,7 +24,7 @@ const FormContainer = ({children, loading, ...props}) => {
 };
 
 FormContainer.propTypes = {
-  children: P.element.isRequired,
+  children: P.node.isRequired,
   loading: P.bool,
 };
 

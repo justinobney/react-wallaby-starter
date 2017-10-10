@@ -1,9 +1,17 @@
 import React, {Component} from 'react';
 import {Header, Rating, Table} from 'semantic-ui-react';
-import {LineChart, Line, ResponsiveContainer, Tooltip, XAxis} from 'recharts';
+import {
+  CartesianGrid,
+  LineChart,
+  Line,
+  ResponsiveContainer,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from 'recharts';
 
-import {BasicPage, Flex} from 'styles';
-import {colors} from 'styles/semantic';
+import {BasicPage} from 'styles';
+import {colors} from 'styles/theme';
 import FormContainer from 'features/form-components/FormContainer';
 
 const data = [
@@ -35,30 +43,33 @@ class DashboardIndex extends Component {
   _renderChart = () => (
     <FormContainer>
       <Header as="h2">Last 7 Days</Header>
-      <Flex style={{height: 150}}>
+      <div style={{height: 200}}>
         <ResponsiveContainer>
-          <LineChart
-            data={data}
-            onClick={(...args) => {
-              console.log(args);
-            }}
-          >
+          <LineChart data={data}>
             <XAxis
               dataKey="name"
               height={45}
               padding={{left: 30, right: 30}}
               tick={<CustomizedAxisTick />}
             />
+            <Tooltip />
+            <YAxis />
+            <CartesianGrid strokeDasharray="3 3" />
             <Line
               type="monotone"
               dataKey="pv"
               stroke={colors.greenDark}
               strokeWidth={4}
             />
-            <Tooltip />
+            <Line
+              type="monotone"
+              dataKey="uv"
+              stroke={colors.tealDark}
+              strokeWidth={4}
+            />
           </LineChart>
         </ResponsiveContainer>
-      </Flex>
+      </div>
     </FormContainer>
   );
 

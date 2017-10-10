@@ -8,10 +8,10 @@ import DashboardIndex from 'features/dashboard/DashboardIndex';
 import AuthRoutes from 'features/auth/Routes';
 import ExampleRoutes from 'features/examples/Routes';
 import {Fill} from 'styles';
-import SemanticTheme from 'styles/semantic';
+import Theme from 'styles/theme';
 
 const MainLayout = () => (
-  <SemanticTheme type="column">
+  <Theme type="column">
     <AppHeader />
     <Fill>
       <Switch>
@@ -20,7 +20,7 @@ const MainLayout = () => (
         <Redirect to="/dashboard" />
       </Switch>
     </Fill>
-  </SemanticTheme>
+  </Theme>
 );
 
 class App extends Component {

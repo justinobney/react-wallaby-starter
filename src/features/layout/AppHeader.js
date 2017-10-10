@@ -9,7 +9,7 @@ import {withActions} from 'actionware';
 import {logout} from 'store/identity';
 import {fixed} from 'styles';
 import {APP_NAME} from 'constants.js';
-import {colors} from 'styles/semantic';
+import {colors} from 'styles/theme';
 
 const MenuWrapper = styled.div`
   ${fixed};

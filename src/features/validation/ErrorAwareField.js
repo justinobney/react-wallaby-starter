@@ -2,7 +2,7 @@ import React from 'react';
 import {Form} from 'semantic-ui-react';
 import styled from 'styled-components';
 
-import {colors} from 'styles/semantic';
+import {colors} from 'styles/theme';
 
 const ErrorList = styled.ul`color: ${colors.errorText};`;
 
@@ -11,14 +11,9 @@ const ErrorAwareField = ({errors = [], children, ...rest}) => {
   return (
     <Form.Field error={showErrors} {...rest}>
       {children}
-      {showErrors &&
-        <ErrorList>
-          {errors.map(x =>
-            <li key={x}>
-              {x}
-            </li>
-          )}
-        </ErrorList>}
+      {showErrors && (
+        <ErrorList>{errors.map(x => <li key={x}>{x}</li>)}</ErrorList>
+      )}
     </Form.Field>
   );
 };

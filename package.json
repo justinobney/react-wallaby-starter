@@ -78,7 +78,7 @@
   },
   "prettier": {
     "printWidth": 80,
-    "tabWidth": 4,
+    "tabWidth": 2,
     "parser": "babylon",
     "singleQuote": true,
     "semi": true,
