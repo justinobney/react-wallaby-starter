@@ -3,7 +3,7 @@ import {withRouter} from 'react-router';
 import {Link, NavLink} from 'react-router-dom';
 import {Container, Dropdown, Icon, Menu} from 'semantic-ui-react';
 import {connect} from 'react-redux';
-import styled from 'styled-components';
+import styled from 'react-emotion';
 import {withActions} from 'actionware';
 
 import {logout} from 'store/identity';

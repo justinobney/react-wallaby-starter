@@ -1,6 +1,7 @@
 import React from 'react';
 import AppFooter from 'features/layout/AppFooter';
-import styled, {css} from 'styled-components';
+import {css} from 'emotion';
+import styled from 'react-emotion';
 import {Container, Header} from 'semantic-ui-react';
 
 // common styled components
@@ -12,15 +13,15 @@ export const floating = css`
   z-index: 1;
 `;
 
-export const box = css`
+export const box = props => css`
   display: flex;
-  align-items: ${props => props.align || 'center'};
-  ${props => (props.column ? column : row)};
+  align-items: ${props.align || 'center'};
+  ${props.column ? column : row};
 `;
 
 export const Box = styled.div`${box};`;
 
-export const layout = css`
+export const layout = props => css`
   display: flex;
   flex: 1;
   position: absolute;
@@ -28,25 +29,25 @@ export const layout = css`
   right: 0;
   top: 0;
   bottom: 0;
-  ${props => (props.type === 'column' ? column : row)};
+  ${props.type === 'column' ? column : row};
 `;
 export const Layout = styled.div`${layout};`;
 
 export const Flex = styled.div`display: flex;`;
 
-export const fill = css`
+export const fill = props => css`
   flex: 1;
   position: relative;
-  ${props => props.scroll && css`overflow-y: auto;`};
-  ${props => props.padded && css`padding: 15px;`};
+  ${props.scroll && css`overflow-y: auto;`};
+  ${props.padded && css`padding: 15px;`};
 `;
 
 export const Fill = styled.div`${fill};`;
 
-export const fixed = css`
+export const fixed = props => css`
   position: relative;
-  ${props => props.padded && css`padding: 15px;`};
-  ${props => props.floating && floating};
+  ${props.padded && css`padding: 15px;`};
+  ${props.floating && floating};
 `;
 
 export const Fixed = styled.div`${fixed};`;

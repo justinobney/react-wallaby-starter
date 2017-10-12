@@ -25,7 +25,11 @@ module.exports = function(wallaby) {
     compilers: {
       '**/*.js?(x)': wallaby.compilers.babel({
         presets: ['latest', 'react'],
-        plugins: ['transform-object-rest-spread', 'transform-class-properties'],
+        plugins: [
+          'emotion',
+          'transform-object-rest-spread',
+          'transform-class-properties',
+        ],
       }),
     },
     setup: wallaby => {

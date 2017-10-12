@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import {Redirect} from 'react-router-dom';
-import styled from 'styled-components';
+import styled from 'react-emotion';
 import {Button, Form, Container, Header, Segment} from 'semantic-ui-react';
 import {withActions, isBusy} from 'actionware';
 import {login} from 'store/identity';

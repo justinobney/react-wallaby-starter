@@ -1,6 +1,6 @@
 import React from 'react';
 import {Container, Dimmer, Loader} from 'semantic-ui-react';
-import styled from 'styled-components';
+import styled from 'react-emotion';
 import P from 'prop-types';
 
 const DimmableWrapper = styled(Dimmer.Dimmable)`

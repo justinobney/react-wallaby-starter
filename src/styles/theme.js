@@ -1,5 +1,6 @@
 import {Layout} from 'styles';
-import styled, {css} from 'styled-components';
+import {css} from 'emotion';
+import styled from 'react-emotion';
 
 export const colors = {
   greenDark: '#36A048',
