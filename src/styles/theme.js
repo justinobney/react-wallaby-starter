@@ -45,33 +45,6 @@ export const theme = css`
         }
       }
 
-      .react-tagsinput-tag {
-        padding: 3px;
-      }
-
-      .react-tagsinput {
-        border: 2px solid rgba(34, 36, 38, 0.15);
-        border-radius: 0.285714rem;
-      }
-
-      .react-tagsinput--focused {
-        border-color: #85b7d9;
-      }
-
-      input.react-tagsinput-input {
-        background: transparent;
-        border: 0;
-        color: #777;
-        font-family: sans-serif;
-        font-size: 13px;
-        font-weight: 400;
-        margin-bottom: 6px;
-        margin-top: 1px;
-        outline: none;
-        padding: 5px;
-        width: 80px;
-      }
-
       .field > label {
         color: ${colors.blueDark};
       }
