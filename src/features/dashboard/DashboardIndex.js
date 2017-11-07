@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Header, Rating, Table} from 'semantic-ui-react';
+import {Card, Header, Rating, Responsive, Table} from 'semantic-ui-react';
 import {
   CartesianGrid,
   LineChart,
@@ -10,6 +10,7 @@ import {
   YAxis,
 } from 'recharts';
 
+import {RESPONSIVE_SIZES} from '../../constants';
 import {BasicPage} from 'styles';
 import {colors} from 'styles/theme';
 import FormContainer from 'features/form-components/FormContainer';
@@ -40,6 +41,34 @@ const CustomizedAxisTick = ({x, y, stroke, payload}) => (
 );
 
 class DashboardIndex extends Component {
+  _renderCards = () => (
+    <Card.Group>
+      {Array.from({length: 20}).map((x, i) => (
+        <Card fluid key={i}>
+          <Card.Content>
+            <Card.Header>
+              <Header as="h2">
+                {`A - `}
+                <small>Power Output</small>
+              </Header>
+            </Card.Header>
+            <Card.Meta>
+              <a>18 studies</a>
+            </Card.Meta>
+            <Card.Description>
+              Creatine supplementation is the reference compound for increasing
+              muscular creatine levels; there is variability in this increase,
+              however, with some nonresponders.
+            </Card.Description>
+          </Card.Content>
+          <Card.Content extra>
+            <Rating icon="star" defaultRating={3} maxRating={3} />
+          </Card.Content>
+        </Card>
+      ))}
+    </Card.Group>
+  );
+
   _renderChart = () => (
     <FormContainer>
       <Header as="h2">Last 7 Days</Header>
@@ -115,8 +144,13 @@ class DashboardIndex extends Component {
   render() {
     return (
       <BasicPage header="Dashboard">
-        {this._renderChart()}
-        {this._renderTable()}
+        <Responsive {...RESPONSIVE_SIZES.maxTablet}>
+          {this._renderCards()}
+        </Responsive>
+        <Responsive {...RESPONSIVE_SIZES.minComputer}>
+          {this._renderChart()}
+          {this._renderTable()}
+        </Responsive>
       </BasicPage>
     );
   }

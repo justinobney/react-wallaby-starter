@@ -1,5 +1,5 @@
 import React from 'react';
-import {Container, Dimmer, Loader} from 'semantic-ui-react';
+import {Dimmer, Loader} from 'semantic-ui-react';
 import styled from 'react-emotion';
 import P from 'prop-types';
 
@@ -14,7 +14,7 @@ const DimmableWrapper = styled(Dimmer.Dimmable)`
 
 const FormContainer = ({children, loading, ...props}) => {
   return (
-    <DimmableWrapper as={Container} dimmed={loading} {...props}>
+    <DimmableWrapper dimmed={loading} {...props}>
       {children}
       <Dimmer active={loading} inverted>
         <Loader>Loading...</Loader>

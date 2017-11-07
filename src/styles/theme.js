@@ -85,6 +85,14 @@ export const theme = css`
     &.header {
       color: ${colors.blueDark};
     }
+
+    &.container {
+      @media only screen and (max-width: 767px) {
+        width: auto !important;
+        margin-left: 0.25em !important;
+        margin-right: 0.25em !important;
+      }
+    }
   }
 `;
 
