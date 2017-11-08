@@ -1,17 +1,15 @@
 import {createReducer} from 'actionware';
 
 const initialState = {
-  user: null,
+  user: {
+    firstName: 'Justin',
+    lastName: 'Obney',
+    username: 'justinobney',
+  },
 };
 
-export async function login() {
-  const data = await api.get('url/foo');
-  return data;
-}
-
-export function logout() {
-  api.get('url/logout');
-}
+export const login = async () => await api.get('url/login');
+export const logout = async () => await api.get('url/logout');
 
 const reducer = createReducer(initialState)
   .on(login, (state, user) => ({
@@ -28,12 +26,11 @@ const api = {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve({
+          id: 1,
           firstName: 'Justin',
           lastName: 'Obney',
           username: 'justinobney',
         });
-
-        // reject({message: 'foo error'});
       }, 1000);
     });
   },

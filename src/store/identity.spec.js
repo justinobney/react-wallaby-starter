@@ -1,9 +1,9 @@
 import {successType} from 'actionware';
-import reducer, {login, logout} from './identity';
+import reducer, * as actions from './identity';
 
 describe('Store: identity', () => {
   describe('reducer', () => {
-    it(successType(login), () => {
+    it(successType(actions.login), () => {
       const initialState = {};
       const expectedState = {
         user: {
@@ -11,7 +11,7 @@ describe('Store: identity', () => {
         },
       };
       const nextState = reducer(initialState, {
-        type: successType(login),
+        type: successType(actions.login),
         payload: {
           name: 'justin',
         },
@@ -19,7 +19,7 @@ describe('Store: identity', () => {
       expect(expectedState).toEqual(nextState);
     });
 
-    it(successType(logout), () => {
+    it(successType(actions.logout), () => {
       const initialState = {
         user: {
           name: 'justin',
@@ -29,7 +29,7 @@ describe('Store: identity', () => {
         user: null,
       };
       const nextState = reducer(initialState, {
-        type: successType(logout),
+        type: successType(actions.logout),
       });
       expect(expectedState).toEqual(nextState);
     });

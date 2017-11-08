@@ -56,7 +56,7 @@ export class LogIn extends Component {
           {user && (
             <Redirect
               to={{
-                pathname: '/router',
+                pathname: '/',
                 state: {to: pathname},
               }}
             />
