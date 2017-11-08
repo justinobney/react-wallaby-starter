@@ -1,7 +1,14 @@
 import React from 'react';
 import {withRouter} from 'react-router';
 import {Link, NavLink} from 'react-router-dom';
-import {Container, Dropdown, Icon, Menu, Responsive} from 'semantic-ui-react';
+import {
+  Container,
+  Dropdown,
+  Icon,
+  Label,
+  Menu,
+  Responsive,
+} from 'semantic-ui-react';
 import {connect} from 'react-redux';
 import styled from 'react-emotion';
 import {withActions} from 'actionware';
@@ -27,65 +34,88 @@ const MenuWrapper = styled.div`
 
     .logo.item {
       align-items: flex-start;
-      padding-left: 0;
+      padding-left: 1.14286em;
+      margin-left: -1.14286em;
     }
   }
 `;
 
 const MenuTitle = styled.span`font-size: 18px;`;
 
-const AppHeader = ({identity, logout}) => (
-  <MenuWrapper>
-    <Container>
-      <Responsive {...RESPONSIVE_SIZES.maxTablet}>
-        <Menu inverted fluid widths={2}>
-          <Menu.Item as={Link} to="/dashboard" className="logo">
-            <MenuTitle>{APP_NAME}</MenuTitle>
-          </Menu.Item>
-          <Dropdown item text="Examples">
-            <Dropdown.Menu>
-              <Dropdown.Item as={NavLink} to="/example/form">
-                Form
-              </Dropdown.Item>
-              <Dropdown.Divider />
-              <Dropdown.Item onClick={() => logout()}>Log Out</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
-        </Menu>
-      </Responsive>
-      <Responsive {...RESPONSIVE_SIZES.minComputer}>
-        <Menu inverted size="massive">
-          <Menu.Item as={Link} to="/dashboard" className="logo">
-            <MenuTitle>{APP_NAME}</MenuTitle>
-          </Menu.Item>
+const envLabelMap = {
+  development: {
+    color: 'red',
+    tag: 'DEV',
+  },
+  test: {
+    color: 'yellow',
+    tag: 'TEST',
+  },
+  staging: {
+    color: 'green',
+    tag: 'STAGING',
+  },
+};
 
-          <Menu.Item as={NavLink} to="/dashboard">
-            <Icon name="home" />
-            Dashboard
-          </Menu.Item>
-
-          <Menu.Menu position="right">
+const AppHeader = ({identity, logout}) => {
+  const envTag = envLabelMap[process.env.REACT_APP_ENVIRONMENT];
+  return (
+    <MenuWrapper>
+      <Container>
+        <Responsive {...RESPONSIVE_SIZES.maxTablet}>
+          <Menu inverted fluid widths={2}>
+            <Menu.Item as={Link} to="/dashboard" className="logo">
+              <MenuTitle>{APP_NAME}</MenuTitle>
+              <Label color={envTag.color}>{envTag.tag}</Label>
+            </Menu.Item>
             <Dropdown item text="Examples">
               <Dropdown.Menu>
                 <Dropdown.Item as={NavLink} to="/example/form">
                   Form
                 </Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
-            <Dropdown
-              item
-              text={`${identity.user.firstName} ${identity.user.lastName}`}
-            >
-              <Dropdown.Menu>
+                <Dropdown.Divider />
                 <Dropdown.Item onClick={() => logout()}>Log Out</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
-          </Menu.Menu>
-        </Menu>
-      </Responsive>
-    </Container>
-  </MenuWrapper>
-);
+          </Menu>
+        </Responsive>
+        <Responsive {...RESPONSIVE_SIZES.minComputer}>
+          <Menu inverted size="massive">
+            <Menu.Item as={Link} to="/dashboard" className="logo">
+              <MenuTitle>{APP_NAME}</MenuTitle>
+              <Label color={envTag.color}>{envTag.tag}</Label>
+            </Menu.Item>
+
+            <Menu.Item as={NavLink} to="/dashboard">
+              <Icon name="home" />
+              Dashboard
+            </Menu.Item>
+
+            <Menu.Menu position="right">
+              <Dropdown item text="Examples">
+                <Dropdown.Menu>
+                  <Dropdown.Item as={NavLink} to="/example/form">
+                    Form
+                  </Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+              <Dropdown
+                item
+                text={`${identity.user.firstName} ${identity.user.lastName}`}
+              >
+                <Dropdown.Menu>
+                  <Dropdown.Item onClick={() => logout()}>
+                    Log Out
+                  </Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+            </Menu.Menu>
+          </Menu>
+        </Responsive>
+      </Container>
+    </MenuWrapper>
+  );
+};
 
 const mapStateToProps = state => {
   return {

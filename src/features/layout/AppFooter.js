@@ -28,6 +28,8 @@ const AppFooter = () => (
     <p>
       {`© ${COMPANY_NAME} ${new Date().getFullYear()}. All Rights Reserved.`}
     </p>
+
+    <p>{process.env.REACT_APP_VERSION}</p>
   </Footer>
 );
 
