@@ -15,9 +15,9 @@ const MainLayout = () => (
     <AppHeader />
     <Fill>
       <Switch>
-        <Route exact path="/dashboard" component={DashboardIndex} />
+        <Route exact path="/" component={DashboardIndex} />
         <Route path="/example" component={ExampleRoutes} />
-        <Redirect to="/dashboard" />
+        <Redirect to="/" />
       </Switch>
     </Fill>
   </Theme>

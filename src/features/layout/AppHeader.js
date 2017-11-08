@@ -55,11 +55,11 @@ const AppHeader = ({identity, logout}) => {
       <Container>
         <Responsive {...RESPONSIVE_SIZES.maxTablet}>
           <Menu inverted fluid widths={2}>
-            <Menu.Item as={Link} to="/dashboard" className="logo">
+            <Menu.Item as={Link} to="/" className="logo">
               {APP_NAME}
-              <Label color={envTag.color}>{envTag.tag}</Label>
+              {envTag && <Label color={envTag.color}>{envTag.tag}</Label>}
             </Menu.Item>
-            <Dropdown item text="Examples">
+            <Dropdown item text="Menu">
               <Dropdown.Menu>
                 <Dropdown.Item as={NavLink} to="/example/form">
                   Form
@@ -75,31 +75,44 @@ const AppHeader = ({identity, logout}) => {
         </Responsive>
         <Responsive {...RESPONSIVE_SIZES.minComputer}>
           <Menu inverted size="massive">
-            <Menu.Item as={Link} to="/dashboard" className="logo">
+            <Menu.Item as={Link} to="/" className="logo">
               {APP_NAME}
-              <Label color={envTag.color}>{envTag.tag}</Label>
+              {envTag && <Label color={envTag.color}>{envTag.tag}</Label>}
             </Menu.Item>
 
-            <Menu.Item as={NavLink} to="/dashboard">
+            <Menu.Item as={NavLink} to="/">
               <Icon name="home" />
               Dashboard
             </Menu.Item>
-            <Menu.Item href="https://github.com/justinobney/react-wallaby-starter/">
-              <Icon name="github" />
-              GitHub
-            </Menu.Item>
-            <Dropdown item text="Examples">
+            <Dropdown
+              item
+              trigger={
+                <span>
+                  <Icon name="list" />
+                  {' Examples'}
+                </span>
+              }
+            >
               <Dropdown.Menu>
                 <Dropdown.Item as={NavLink} to="/example/form">
                   Form
                 </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
+            <Menu.Item href="https://github.com/justinobney/react-wallaby-starter/">
+              <Icon name="github" />
+              GitHub
+            </Menu.Item>
 
             <Menu.Menu position="right">
               <Dropdown
                 item
-                text={`${identity.user.firstName} ${identity.user.lastName}`}
+                trigger={
+                  <span>
+                    <Icon name="user circle" />
+                    {` ${identity.user.firstName} ${identity.user.lastName}`}
+                  </span>
+                }
               >
                 <Dropdown.Menu>
                   <Dropdown.Item onClick={() => logout()}>

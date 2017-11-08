@@ -1,28 +1,16 @@
-import isFunction from 'lodash/isFunction';
-
 import './event-interceptors';
 
-// for testing
-const stub = {
-  load() {},
-  page() {},
-  identify() {},
-  track() {},
+const analytics = {
+  page: (...args) => window.analytics.page(...args),
+  identify: (...args) => window.analytics.identify(...args),
+  track: (...args) => window.analytics.track(...args),
 };
 
-const analytics = window.analytics || stub;
-
 if (process.env.NODE_ENV === 'production') {
-  analytics.load(process.env.REACT_APP_SEGMENT_KEY);
+  window.analytics.load(process.env.REACT_APP_SEGMENT_KEY);
 } else {
   Object.keys(analytics).forEach(key => {
-    const original = analytics[key];
-    if (isFunction(original)) {
-      analytics[key] = function(...args) {
-        console.info(key, ...args);
-        return original.call(analytics, ...args);
-      };
-    }
+    analytics[key] = (...args) => console.info(key, ...args);
   });
 }
 

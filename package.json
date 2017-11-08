@@ -1,12 +1,13 @@
 {
   "name": "ReactStarter",
-  "version": "0.0.1",
+  "version": "0.10.0",
   "scripts": {
     "start": "react-app-rewired start",
     "now-start": "serve --single ./build",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test --env=jsdom",
-    "test:ci": "cross-env CI=true react-app-rewired test --env=jsdom --testResultsProcessor=jest-junit-reporter",
+    "test:ci":
+      "cross-env CI=true react-app-rewired test --env=jsdom --testResultsProcessor=jest-junit-reporter",
     "eject": "react-app-rewired eject",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public"
@@ -61,22 +62,10 @@
       "jasmine": true
     },
     "rules": {
-      "semi": [
-        "warn",
-        "always"
-      ],
-      "indent": [
-        "error",
-        2
-      ],
-      "comma-dangle": [
-        "error",
-        "always-multiline"
-      ],
-      "object-curly-spacing": [
-        "error",
-        "never"
-      ],
+      "semi": ["warn", "always"],
+      "indent": ["error", 2],
+      "comma-dangle": ["error", "always-multiline"],
+      "object-curly-spacing": ["error", "never"],
       "no-use-before-define": 0
     }
   },
