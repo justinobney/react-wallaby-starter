@@ -26,7 +26,6 @@ const MenuWrapper = styled.div`
     border-radius: 0;
 
     .logo.item {
-      align-items: flex-start;
       padding-left: 1.14286em;
       margin-left: -1.14286em;
     }
@@ -56,7 +55,7 @@ const AppHeader = ({identity, logout}) => {
         <Responsive {...RESPONSIVE_SIZES.maxTablet}>
           <Menu inverted fluid widths={2}>
             <Menu.Item as={Link} to="/" className="logo">
-              {APP_NAME}
+              <span>{APP_NAME}</span>
               {envTag && <Label color={envTag.color}>{envTag.tag}</Label>}
             </Menu.Item>
             <Dropdown item text="Menu">
@@ -76,11 +75,11 @@ const AppHeader = ({identity, logout}) => {
         <Responsive {...RESPONSIVE_SIZES.minComputer}>
           <Menu inverted size="massive">
             <Menu.Item as={Link} to="/" className="logo">
-              {APP_NAME}
+              <span>{APP_NAME}</span>
               {envTag && <Label color={envTag.color}>{envTag.tag}</Label>}
             </Menu.Item>
 
-            <Menu.Item as={NavLink} to="/">
+            <Menu.Item as={NavLink} exact to="/">
               <Icon name="home" />
               Dashboard
             </Menu.Item>

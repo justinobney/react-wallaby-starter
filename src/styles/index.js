@@ -38,7 +38,11 @@ export const Flex = styled.div`display: flex;`;
 export const fill = props => css`
   flex: 1;
   position: relative;
-  ${props.scroll && css`overflow-y: auto;`};
+  ${props.scroll &&
+    css`
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    `};
   ${props.padded && css`padding: 15px;`};
 `;
 
