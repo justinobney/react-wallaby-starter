@@ -1,8 +1,10 @@
 import {Layout} from 'styles';
 import {css} from 'emotion';
 import styled from 'react-emotion';
+import {lighten, textInputs} from 'polished';
 
 export const colors = {
+  black: '#1B1C1D',
   greenDark: '#36A048',
   greenLight: '#51B95D',
   tealDark: '#12ADA5',
@@ -18,18 +20,7 @@ export const theme = css`
     &.form {
       margin-bottom: 15px;
 
-      input:not([type]),
-      input[type='date'],
-      input[type='datetime-local'],
-      input[type='email'],
-      input[type='number'],
-      input[type='password'],
-      input[type='search'],
-      input[type='tel'],
-      input[type='time'],
-      input[type='text'],
-      input[type='file'],
-      input[type='url'] {
+      ${textInputs()} {
         border-width: 2px;
       }
 
@@ -74,9 +65,9 @@ export const theme = css`
       }
 
       thead th {
-        background: ${colors.blueDark} -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.05));
-        background: ${colors.blueDark} -o-linear-gradient(transparent, rgba(0, 0, 0, 0.05));
-        background: ${colors.blueDark}
+        background: ${lighten(0.2, colors.black)} -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.05));
+        background: ${lighten(0.2, colors.black)} -o-linear-gradient(transparent, rgba(0, 0, 0, 0.05));
+        background: ${lighten(0.2, colors.black)}
           linear-gradient(transparent, rgba(0, 0, 0, 0.05));
         color: #fff;
       }
