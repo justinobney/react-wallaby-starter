@@ -6,8 +6,7 @@
     "now-start": "serve --single ./build",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test --env=jsdom",
-    "test:ci":
-      "cross-env CI=true react-app-rewired test --env=jsdom --testResultsProcessor=jest-junit-reporter",
+    "test:ci": "cross-env CI=true react-app-rewired test --env=jsdom --testResultsProcessor=jest-junit-reporter",
     "eject": "react-app-rewired eject",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public"
@@ -49,9 +48,9 @@
     "redux": "^3.7.2",
     "redux-actions": "^2.2.1",
     "redux-thunk": "^2.2.0",
+    "segmentize": "^0.4.1",
     "semantic-ui-css": "^2.2.12",
     "semantic-ui-react": "0.76.0",
-    "simple-pagination": "^1.0.0",
     "toastr": "^2.1.2",
     "validate.js": "^0.11.1",
     "webpack-dashboard": "^1.0.0"
@@ -62,10 +61,22 @@
       "jasmine": true
     },
     "rules": {
-      "semi": ["warn", "always"],
-      "indent": ["error", 2],
-      "comma-dangle": ["error", "always-multiline"],
-      "object-curly-spacing": ["error", "never"],
+      "semi": [
+        "warn",
+        "always"
+      ],
+      "indent": [
+        "error",
+        2
+      ],
+      "comma-dangle": [
+        "error",
+        "always-multiline"
+      ],
+      "object-curly-spacing": [
+        "error",
+        "never"
+      ],
       "no-use-before-define": 0
     }
   },

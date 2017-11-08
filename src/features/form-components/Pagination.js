@@ -1,34 +1,43 @@
 import React, {Component} from 'react';
 import {Menu} from 'semantic-ui-react';
-import paginate from 'simple-pagination';
+import segmentize from 'segmentize';
 
-export default class MenuExamplePagination extends Component {
+export default class Pagination extends Component {
   render() {
-    const {currentPage, pageSize, totalCount, onPageChange} = this.props;
+    const {currentPage, totalCount, onPageChange} = this.props;
 
-    const pagination = paginate(totalCount, pageSize, currentPage);
-    const pages = Array.from({length: pagination.pageCount});
+    const segments = segmentize({
+      page: currentPage,
+      pages: totalCount,
+      beginPages: 1,
+      endPages: 1,
+      sidePages: 2,
+    });
 
-    // TODO: better boundries
-    // const MAX_VISIBLE = 7;
-    // pages = 9
-    // 1 => 1 2 3 4 5 6 . . 9
-    // 3 => 1 2 3 4 5 6 . . 9
-    // 4 => 1 2 3 4 5 6 . . 9
-    // 5 => 1 . 3 4 5 6 7 . 9
-    // 6 => 1 . . 4 5 6 7 8 9
-    // 7 => 1 . . 4 5 6 7 8 9
+    const leftPages = [...segments.beginPages, ...segments.previousPages];
+    const rightPages = [...segments.nextPages, ...segments.endPages];
 
     return (
       <Menu pagination>
-        {pages.map((page, idx) =>
+        {leftPages.map(page => (
           <Menu.Item
-            key={idx}
-            name={`${idx + 1}`}
-            active={idx + 1 === pagination.currentPage}
-            onClick={() => onPageChange(idx + 1)}
+            key={page}
+            name={`${page}`}
+            onClick={() => onPageChange(page)}
           />
-        )}
+        ))}
+
+        {segments.centerPage.map(page => (
+          <Menu.Item key={page} name={`${page}`} active />
+        ))}
+
+        {rightPages.map(page => (
+          <Menu.Item
+            key={page}
+            name={`${page}`}
+            onClick={() => onPageChange(page)}
+          />
+        ))}
       </Menu>
     );
   }
