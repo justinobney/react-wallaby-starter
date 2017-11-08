@@ -8,15 +8,19 @@ import {Provider} from 'react-redux';
 import {ConnectedRouter} from 'react-router-redux';
 import createHistory from 'history/createBrowserHistory';
 
-import createStore from './store';
-import App from './App';
+import createStore from 'store';
+import analytics from 'features/analytics';
 
 import './styles/imports';
+import App from './App';
 
 const history = createHistory();
 const store = createStore(history);
-
 const rootEl = document.getElementById('root');
+
+history.listen((location, action) => {
+  analytics.page(location.pathname);
+});
 
 render(
   <Provider store={store}>
