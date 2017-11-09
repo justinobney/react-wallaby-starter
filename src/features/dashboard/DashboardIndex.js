@@ -1,5 +1,13 @@
 import React, {Component} from 'react';
-import {Card, Header, Rating, Responsive, Table} from 'semantic-ui-react';
+import {
+  Button,
+  Card,
+  Container,
+  Header,
+  Rating,
+  Responsive,
+  Table,
+} from 'semantic-ui-react';
 import {
   CartesianGrid,
   LineChart,
@@ -11,9 +19,11 @@ import {
 } from 'recharts';
 
 import {RESPONSIVE_SIZES} from '../../constants';
-import {BasicPage} from 'styles';
+import {Fill, HeaderWithActions, Layout, PageHeader} from 'styles';
 import {colors} from 'styles/theme';
+import {SlideOutPanel} from 'styles/SlideOutPanel';
 import FormContainer from 'features/form-components/FormContainer';
+import AppFooter from 'features/layout/AppFooter';
 
 const data = [
   {name: '11-1-17', uv: 4000, pv: 2400, amt: 2400},
@@ -41,6 +51,8 @@ const CustomizedAxisTick = ({x, y, stroke, payload}) => (
 );
 
 class DashboardIndex extends Component {
+  state = {shown: false};
+
   _renderCards = () => (
     <Card.Group>
       {Array.from({length: 20}).map((x, i) => (
@@ -102,6 +114,29 @@ class DashboardIndex extends Component {
     </FormContainer>
   );
 
+  _renderPanel = () => {
+    return this.state.shown ? (
+      <SlideOutPanel>
+        <PageHeader>
+          <HeaderWithActions title="Example Modal">
+            <Button onClick={() => this.setState({shown: false})}>Close</Button>
+          </HeaderWithActions>
+        </PageHeader>
+        <Fill scroll padded>
+          {Array.from({length: 30}).map(x => (
+            <p>
+              Aute laboris eiusmod dolore velit dolor adipisicing ipsum. Qui id
+              consequat qui cillum deserunt cupidatat laboris ipsum tempor qui
+              eu. Consequat ad consequat irure esse qui ut adipisicing nulla
+              magna commodo. Cillum esse culpa tempor tempor exercitation
+              commodo et ea Lorem quis quis excepteur commodo occaecat et.
+            </p>
+          ))}
+        </Fill>
+      </SlideOutPanel>
+    ) : null;
+  };
+
   _renderTable = () => (
     <Table celled padded striped>
       <Table.Header>
@@ -118,9 +153,9 @@ class DashboardIndex extends Component {
         {Array.from({length: 20}).map((x, i) => (
           <Table.Row key={i}>
             <Table.Cell>
-              <Header as="h2" textAlign="center">
-                A
-              </Header>
+              <Button fluid onClick={() => this.setState({shown: true})}>
+                Edit
+              </Button>
             </Table.Cell>
             <Table.Cell singleLine>Power Output</Table.Cell>
             <Table.Cell>
@@ -143,15 +178,22 @@ class DashboardIndex extends Component {
 
   render() {
     return (
-      <BasicPage header="Dashboard">
-        <Responsive {...RESPONSIVE_SIZES.maxTablet}>
-          {this._renderCards()}
-        </Responsive>
-        <Responsive {...RESPONSIVE_SIZES.minComputer}>
-          {this._renderChart()}
-          {this._renderTable()}
-        </Responsive>
-      </BasicPage>
+      <Layout>
+        <PageHeader>Dashboard</PageHeader>
+        <Fill scroll padded>
+          <Container>
+            <Responsive {...RESPONSIVE_SIZES.maxTablet}>
+              {this._renderCards()}
+            </Responsive>
+            <Responsive {...RESPONSIVE_SIZES.minComputer}>
+              {this._renderChart()}
+              {this._renderTable()}
+            </Responsive>
+            <AppFooter />
+          </Container>
+        </Fill>
+        {this._renderPanel()}
+      </Layout>
     );
   }
 }

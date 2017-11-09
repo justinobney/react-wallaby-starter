@@ -29,7 +29,7 @@ export const layout = props => css`
   right: 0;
   top: 0;
   bottom: 0;
-  ${props.type === 'column' ? column : row};
+  ${props.type === 'row' ? row : column};
 `;
 export const Layout = styled.div`${layout};`;
 
@@ -38,11 +38,14 @@ export const Flex = styled.div`display: flex;`;
 export const fill = props => css`
   flex: 1;
   position: relative;
-  ${props.scroll &&
-    css`
-      overflow-y: auto;
-      -webkit-overflow-scrolling: touch;
-    `};
+  ${props.scroll
+    ? css`
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+      `
+    : css`
+        overflow-y: hidden;
+      `};
   ${props.padded && css`padding: 15px;`};
 `;
 
@@ -102,7 +105,7 @@ export const HeaderWithActions = ({title, children}) => (
 );
 
 export const BasicPage = ({header, children}) => (
-  <Layout type="column">
+  <Layout>
     <PageHeader>{header}</PageHeader>
     <Fill scroll padded>
       <Container>

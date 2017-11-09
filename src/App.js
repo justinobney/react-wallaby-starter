@@ -11,7 +11,7 @@ import {Fill} from 'styles';
 import Theme from 'styles/theme';
 
 const MainLayout = () => (
-  <Theme type="column">
+  <Theme>
     <AppHeader />
     <Fill>
       <Switch>
