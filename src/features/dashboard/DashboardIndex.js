@@ -74,7 +74,9 @@ class DashboardIndex extends Component {
             </Card.Description>
           </Card.Content>
           <Card.Content extra>
-            <Rating icon="star" defaultRating={3} maxRating={3} />
+            <Button fluid onClick={() => this.setState({shown: true})}>
+              Edit
+            </Button>
           </Card.Content>
         </Card>
       ))}
@@ -115,8 +117,8 @@ class DashboardIndex extends Component {
   );
 
   _renderPanel = () => {
-    return this.state.shown ? (
-      <SlideOutPanel>
+    return (
+      <SlideOutPanel show={this.state.shown}>
         <PageHeader>
           <HeaderWithActions title="Example Modal">
             <Button onClick={() => this.setState({shown: false})}>Close</Button>
@@ -134,7 +136,7 @@ class DashboardIndex extends Component {
           ))}
         </Fill>
       </SlideOutPanel>
-    ) : null;
+    );
   };
 
   _renderTable = () => (
