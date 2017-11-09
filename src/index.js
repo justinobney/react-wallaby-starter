@@ -18,6 +18,7 @@ const history = createHistory();
 const store = createStore(history);
 const rootEl = document.getElementById('root');
 
+analytics.page();
 history.listen((location, action) => {
   analytics.page(location.pathname);
 });
