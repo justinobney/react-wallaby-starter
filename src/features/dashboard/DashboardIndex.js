@@ -125,15 +125,17 @@ class DashboardIndex extends Component {
           </HeaderWithActions>
         </PageHeader>
         <Fill scroll padded>
-          {Array.from({length: 30}).map(x => (
-            <p>
-              Aute laboris eiusmod dolore velit dolor adipisicing ipsum. Qui id
-              consequat qui cillum deserunt cupidatat laboris ipsum tempor qui
-              eu. Consequat ad consequat irure esse qui ut adipisicing nulla
-              magna commodo. Cillum esse culpa tempor tempor exercitation
-              commodo et ea Lorem quis quis excepteur commodo occaecat et.
-            </p>
-          ))}
+          {this.state.shown &&
+            Array.from({length: 30}).map(x => (
+              <p>
+                Aute laboris eiusmod dolore velit dolor adipisicing ipsum. Qui
+                id consequat qui cillum deserunt cupidatat laboris ipsum tempor
+                qui eu. Consequat ad consequat irure esse qui ut adipisicing
+                nulla magna commodo. Cillum esse culpa tempor tempor
+                exercitation commodo et ea Lorem quis quis excepteur commodo
+                occaecat et.
+              </p>
+            ))}
         </Fill>
       </SlideOutPanel>
     );
