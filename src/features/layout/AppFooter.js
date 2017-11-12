@@ -15,18 +15,16 @@ const Footer = styled.footer`
 
   a {
     color: #8a8a8a;
-
     text-decoration: underline;
   }
 `;
 
 const AppFooter = () => (
   <Footer>
+    <p>{`© ${COMPANY_NAME} ${new Date().getFullYear()}.`}</p>
+
     <p className="support">
       Call <a href="tel:18005518900">1-800-551-8900</a> for support.
-    </p>
-    <p>
-      {`© ${COMPANY_NAME} ${new Date().getFullYear()}. All Rights Reserved.`}
     </p>
 
     <p>{process.env.REACT_APP_VERSION}</p>

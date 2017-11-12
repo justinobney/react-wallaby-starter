@@ -14,6 +14,7 @@ const SlideOutWrapper = styled.div`
 
   @media only screen and (max-width: 768px) {
     padding-left: 0%;
+    overflow-y: hidden;
   }
 `;
 
@@ -27,6 +28,9 @@ const SlideOutContent = styled.div`
 
   @media only screen and (max-width: 768px) {
     max-width: 100%;
+    transform: translate3d(0, ${props => props.offset}%, 0);
+    margin: 10px 10px 0;
+    box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.6);
   }
 `;
 
