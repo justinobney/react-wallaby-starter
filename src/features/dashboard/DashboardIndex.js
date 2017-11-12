@@ -21,8 +21,8 @@ import {
 import {RESPONSIVE_SIZES} from '../../constants';
 import Page from 'styles/Page';
 import {colors} from 'styles/theme';
-import SlideOutPanel from 'styles/SlideOutPanel';
 import FormContainer from 'features/form-components/FormContainer';
+import SlideOutPanel from 'features/layout/SlideOutPanel';
 import AppFooter from 'features/layout/AppFooter';
 
 const data = [
