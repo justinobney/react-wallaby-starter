@@ -1,4 +1,4 @@
-import {Layout} from 'styles';
+import Layout from 'styles/Layout';
 import {css} from 'emotion';
 import styled from 'react-emotion';
 import {lighten, textInputs} from 'polished';
