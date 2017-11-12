@@ -11,7 +11,7 @@ import createHistory from 'history/createBrowserHistory';
 import createStore from 'store';
 import analytics from 'features/analytics';
 
-import './styles/imports';
+import 'styles';
 import App from './App';
 
 const history = createHistory();

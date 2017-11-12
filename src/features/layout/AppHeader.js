@@ -14,12 +14,12 @@ import styled from 'react-emotion';
 import {withActions} from 'actionware';
 
 import {logout} from 'store/identity';
-import {fixed} from 'styles';
+import * as styles from 'styles/Layout';
 import {APP_NAME, RESPONSIVE_SIZES} from 'constants.js';
 import {colors} from 'styles/theme';
 
 const MenuWrapper = styled.div`
-  ${fixed};
+  ${styles.fixed};
   background-color: ${colors.black};
 
   .ui.menu.inverted {

@@ -19,9 +19,9 @@ import {
 } from 'recharts';
 
 import {RESPONSIVE_SIZES} from '../../constants';
-import {Fill, HeaderWithActions, Layout, PageHeader} from 'styles';
+import Page from 'styles/Page';
 import {colors} from 'styles/theme';
-import {SlideOutPanel} from 'styles/SlideOutPanel';
+import SlideOutPanel from 'styles/SlideOutPanel';
 import FormContainer from 'features/form-components/FormContainer';
 import AppFooter from 'features/layout/AppFooter';
 
@@ -119,12 +119,12 @@ class DashboardIndex extends Component {
   _renderPanel = () => {
     return (
       <SlideOutPanel show={this.state.shown}>
-        <PageHeader>
-          <HeaderWithActions title="Example Modal">
+        <Page.Header>
+          <Page.HeaderWithActions title="Example Modal">
             <Button onClick={() => this.setState({shown: false})}>Close</Button>
-          </HeaderWithActions>
-        </PageHeader>
-        <Fill scroll padded>
+          </Page.HeaderWithActions>
+        </Page.Header>
+        <Page.Fill scroll padded>
           {this.state.shown &&
             Array.from({length: 30}).map(x => (
               <p>
@@ -136,7 +136,7 @@ class DashboardIndex extends Component {
                 occaecat et.
               </p>
             ))}
-        </Fill>
+        </Page.Fill>
       </SlideOutPanel>
     );
   };
@@ -182,9 +182,9 @@ class DashboardIndex extends Component {
 
   render() {
     return (
-      <Layout>
-        <PageHeader>Dashboard</PageHeader>
-        <Fill scroll padded>
+      <Page>
+        <Page.Header>Dashboard</Page.Header>
+        <Page.Fill scroll padded>
           <Container>
             <Responsive {...RESPONSIVE_SIZES.maxTablet}>
               {this._renderCards()}
@@ -195,9 +195,9 @@ class DashboardIndex extends Component {
             </Responsive>
             <AppFooter />
           </Container>
-        </Fill>
+        </Page.Fill>
         {this._renderPanel()}
-      </Layout>
+      </Page>
     );
   }
 }

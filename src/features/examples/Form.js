@@ -9,7 +9,7 @@ import {
   Segment,
 } from 'semantic-ui-react';
 import {Link} from 'react-router-dom';
-import {BasicPage, HeaderWithActions} from 'styles';
+import Page from 'styles/Page';
 import FormContainer from 'features/form-components/FormContainer';
 import ErrorAwareField from 'features/validation/ErrorAwareField';
 
@@ -156,7 +156,7 @@ class ExampleForm extends Component {
   };
 
   _renderHeader = () => (
-    <HeaderWithActions title="Example Form">
+    <Page.HeaderWithActions title="Example Form">
       <Popup
         trigger={
           <Button
@@ -171,12 +171,12 @@ class ExampleForm extends Component {
         inverted
         on={['hover', 'click']}
       />
-    </HeaderWithActions>
+    </Page.HeaderWithActions>
   );
 
   render() {
     return (
-      <BasicPage header={this._renderHeader()}>
+      <Page.Basic header={this._renderHeader()}>
         {this._renderForm()}
         <Modal
           open={this.state.modalOpen}
@@ -205,7 +205,7 @@ class ExampleForm extends Component {
             </Button>
           </Modal.Actions>
         </Modal>
-      </BasicPage>
+      </Page.Basic>
     );
   }
 }

@@ -7,19 +7,19 @@ import AppHeader from 'features/layout/AppHeader';
 import DashboardIndex from 'features/dashboard/DashboardIndex';
 import AuthRoutes from 'features/auth/Routes';
 import ExampleRoutes from 'features/examples/Routes';
-import {Fill} from 'styles';
+import Layout from 'styles/Layout';
 import Theme from 'styles/theme';
 
 const MainLayout = () => (
   <Theme>
     <AppHeader />
-    <Fill>
+    <Layout.Fill>
       <Switch>
         <Route exact path="/" component={DashboardIndex} />
         <Route path="/example" component={ExampleRoutes} />
         <Redirect to="/" />
       </Switch>
-    </Fill>
+    </Layout.Fill>
   </Theme>
 );
 

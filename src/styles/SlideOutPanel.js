@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'react-emotion';
 import Animate from 'react-move/Animate';
 
-import {column, fill, layout} from '.';
+import * as styles from './Layout';
 
 const SlideOutWrapper = styled.div`
-  ${layout};
+  ${styles.layout};
   background: rgba(0, 0, 0, ${props => props.opacity});
   z-index: 1;
   padding-left: 30%;
@@ -19,8 +19,8 @@ const SlideOutWrapper = styled.div`
 
 const SlideOutContent = styled.div`
   display: flex;
-  ${fill};
-  ${column};
+  ${styles.fill};
+  ${styles.column};
   transform: translate3d(${props => props.offset}%, 0, 0);
   background-color: #fff;
   max-width: 800px;
@@ -30,7 +30,7 @@ const SlideOutContent = styled.div`
   }
 `;
 
-export const SlideOutPanel = ({children, duration = 250, show}) => (
+const SlideOutPanel = ({children, duration = 250, show}) => (
   <Animate
     show={show}
     start={{
@@ -63,3 +63,5 @@ export const SlideOutPanel = ({children, duration = 250, show}) => (
     }}
   </Animate>
 );
+
+export default SlideOutPanel;
