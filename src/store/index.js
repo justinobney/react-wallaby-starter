@@ -8,6 +8,7 @@ import identity from './identity';
 const rootReducer = {
   identity,
   actionwareReducer,
+  router: routerReducer,
 };
 
 export default function finalCreateStore(history) {
@@ -16,10 +17,7 @@ export default function finalCreateStore(history) {
     window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
   const store = createStore(
-    combineReducers({
-      ...rootReducer,
-      router: routerReducer,
-    }),
+    combineReducers(rootReducer),
     composeEnhancers(applyMiddleware(historyMiddleware, thunk))
   );
 

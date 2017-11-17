@@ -18,7 +18,7 @@ const history = createHistory();
 const store = createStore(history);
 const rootEl = document.getElementById('root');
 
-analytics.page();
+analytics.page(window.location.pathname);
 history.listen((location, action) => {
   analytics.page(location.pathname);
 });
@@ -34,11 +34,10 @@ render(
 
 if (module.hot) {
   module.hot.accept('./App', () => {
-    const NextApp = require('./App').default;
     render(
       <Provider store={store}>
         <ConnectedRouter history={history}>
-          <NextApp />
+          <App />
         </ConnectedRouter>
       </Provider>,
       rootEl
