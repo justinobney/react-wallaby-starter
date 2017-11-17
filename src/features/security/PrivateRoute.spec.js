@@ -18,12 +18,7 @@ describe('Component: PrivateRoute', () => {
   it('should render null when user does not exist', () => {
     const tree = create(
       <MemoryRouter initialEntries={['/app']} initialIndex={1}>
-        <PrivateRoute
-          claim="users/modify"
-          path="/app"
-          claims={[]}
-          component={RouteComponent}
-        />
+        <PrivateRoute path="/app" component={RouteComponent} />
       </MemoryRouter>
     ).toJSON();
     expect(tree).toMatchSnapshot();
