@@ -1,9 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Component: RequiresClaim should render component when user has claim 1`] = `
-<div>
-  Child Component
-</div>
-`;
+exports[`Component: RequiresClaim should render component when user has claim 1`] = `"Testing"`;
 
 exports[`Component: RequiresClaim should render null when user does not have claim 1`] = `null`;

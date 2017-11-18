@@ -1,11 +1,7 @@
 import {createReducer} from 'actionware';
 
 const initialState = {
-  user: {
-    firstName: 'Justin',
-    lastName: 'Obney',
-    username: 'justinobney',
-  },
+  user: null,
 };
 
 export const login = async () => await api.get('url/login');
@@ -29,7 +25,7 @@ const api = {
           id: 1,
           firstName: 'Justin',
           lastName: 'Obney',
-          username: 'justinobney',
+          email: 'justinobney#gmail.com',
         });
       }, 1000);
     });

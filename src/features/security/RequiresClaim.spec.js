@@ -7,12 +7,9 @@ const ChildComponent = () => <div>Child Component</div>;
 describe('Component: RequiresClaim', () => {
   it('should render component when user has claim', () => {
     const tree = create(
-      <RequiresClaim
-        claim="users/modify"
-        user={{}}
-        claims={['users/modify']}
-        render={() => <ChildComponent />}
-      />
+      <RequiresClaim claim="users/modify" claims={['users/modify']}>
+        Testing
+      </RequiresClaim>
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
@@ -21,7 +18,6 @@ describe('Component: RequiresClaim', () => {
     const tree = create(
       <RequiresClaim
         claim="users/modify"
-        user={{}}
         claims={[]}
         render={() => <ChildComponent />}
       />

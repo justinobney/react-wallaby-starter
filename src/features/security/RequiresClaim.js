@@ -1,16 +1,21 @@
 import {connect} from 'react-redux';
+import types from 'prop-types';
 
-export const RequiresClaim = ({claim, claims = [], user, render}) => {
-  if (!user || claims.indexOf(claim) === -1) {
+export const RequiresClaim = ({claim, claims = [], children}) => {
+  if (claims.indexOf(claim) === -1) {
     return null;
   }
 
-  return render();
+  return children || null;
+};
+
+RequiresClaim.propTypes = {
+  claims: types.object,
+  claim: types.string.isRequired,
 };
 
 const mapStateToProps = state => {
   return {
-    user: state.identity.user,
     claims: state.identity.claims,
   };
 };

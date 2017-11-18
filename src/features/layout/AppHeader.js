@@ -1,4 +1,5 @@
 import React from 'react';
+import types from 'prop-types';
 import {withRouter} from 'react-router';
 import {Link, NavLink} from 'react-router-dom';
 import {
@@ -125,6 +126,10 @@ const AppHeader = ({identity, logout}) => {
       </Container>
     </MenuWrapper>
   );
+};
+
+AppHeader.propTypes = {
+  identity: types.object.isRequired, //TODO: determine shapes location
 };
 
 const mapStateToProps = state => {

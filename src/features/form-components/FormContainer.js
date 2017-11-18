@@ -1,7 +1,7 @@
 import React from 'react';
 import {Dimmer, Loader} from 'semantic-ui-react';
 import styled from 'react-emotion';
-import P from 'prop-types';
+import types from 'prop-types';
 
 const DimmableWrapper = styled(Dimmer.Dimmable)`
   box-shadow: 0 0 15px 2px rgba(0, 0, 0, 0.1);
@@ -24,8 +24,8 @@ const FormContainer = ({children, loading, ...props}) => {
 };
 
 FormContainer.propTypes = {
-  children: P.node.isRequired,
-  loading: P.bool,
+  children: types.node.isRequired,
+  loading: types.bool,
 };
 
 export default FormContainer;

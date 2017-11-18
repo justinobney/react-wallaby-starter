@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'react-emotion';
 import Animate from 'react-move/Animate';
+import types from 'prop-types';
 
 import * as styles from 'styles/Layout';
 
@@ -18,6 +19,10 @@ const SlideOutWrapper = styled.div`
   }
 `;
 
+SlideOutWrapper.propTypes = {
+  opacity: types.number.isRequired,
+};
+
 const SlideOutContent = styled.div`
   display: flex;
   ${styles.fill};
@@ -33,6 +38,10 @@ const SlideOutContent = styled.div`
     box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.6);
   }
 `;
+
+SlideOutContent.propTypes = {
+  offset: types.number.isRequired,
+};
 
 const SlideOutPanel = ({children, duration = 250, show}) => (
   <Animate
@@ -67,5 +76,10 @@ const SlideOutPanel = ({children, duration = 250, show}) => (
     }}
   </Animate>
 );
+
+SlideOutPanel.propTypes = {
+  show: types.bool.isRequired,
+  duration: types.number,
+};
 
 export default SlideOutPanel;

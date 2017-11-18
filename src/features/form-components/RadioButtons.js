@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import {Button} from 'semantic-ui-react';
-import P from 'prop-types';
+import types from 'prop-types';
 
 export function Func() {}
 
 class RadioButtons extends Component {
   static propTypes = {
-    name: P.string.isRequired,
-    onChange: P.func.isRequired,
+    name: types.string.isRequired,
+    onChange: types.func.isRequired,
   };
 
   onClick = (e, {value}) => {

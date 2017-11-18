@@ -1,6 +1,7 @@
 import React, {createElement} from 'react';
 import {Redirect, Route} from 'react-router-dom';
 import {connect} from 'react-redux';
+import types from 'prop-types';
 
 export const PrivateRoute = ({component, user, ...rest}) => {
   const canRoute = !!user;
@@ -21,6 +22,10 @@ export const PrivateRoute = ({component, user, ...rest}) => {
         )}
     />
   );
+};
+
+PrivateRoute.propTypes = {
+  user: types.object,
 };
 
 const mapStateToProps = state => {
