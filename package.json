@@ -28,7 +28,7 @@
     "serve": "^6.2.0"
   },
   "dependencies": {
-    "actionware": "^8.1.0",
+    "actionware": "^8.2.3",
     "axios": "^0.18.0",
     "babel-plugin-emotion": "^8.0.4",
     "core-js": "^2.5.1",
