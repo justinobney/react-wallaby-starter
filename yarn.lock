@@ -38,7 +38,7 @@
   version "1.6.4"
   resolved "https://registry.yarnpkg.com/@most/prelude/-/prelude-1.6.4.tgz#254ab6e22c0d4e7cb19e6ec1c966b75f57317f25"
 
-"@storybook/addon-actions@^3.2.12", "@storybook/addon-actions@^3.2.17":
+"@storybook/addon-actions@3.2.17", "@storybook/addon-actions@^3.2.17":
   version "3.2.17"
   resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-3.2.17.tgz#e85d38f743125157fdaf6669708e089bc2008e50"
   dependencies:
@@ -49,7 +49,7 @@
     react-inspector "^2.2.1"
     uuid "^3.1.0"
 
-"@storybook/addon-info@^3.2.9":
+"@storybook/addon-info@3.2.17":
   version "3.2.17"
   resolved "https://registry.yarnpkg.com/@storybook/addon-info/-/addon-info-3.2.17.tgz#a1a612ca323c360089dd4d49aca8abf902d4929d"
   dependencies:
@@ -62,7 +62,7 @@
     react-addons-create-fragment "^15.5.3"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-links@^3.2.12", "@storybook/addon-links@^3.2.17":
+"@storybook/addon-links@3.2.17", "@storybook/addon-links@^3.2.17":
   version "3.2.17"
   resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-3.2.17.tgz#fb1d5f5f16575e56d560955d70c2a756c9f5b612"
   dependencies:
@@ -134,7 +134,7 @@
   dependencies:
     babel-runtime "^6.5.0"
 
-"@storybook/react@^3.2.12":
+"@storybook/react@3.2.17":
   version "3.2.17"
   resolved "https://registry.yarnpkg.com/@storybook/react/-/react-3.2.17.tgz#c7b0595efef049d4dae89202994c17f332ee4662"
   dependencies:
@@ -279,7 +279,7 @@ acorn@^5.0.0, acorn@^5.1.1:
   version "5.2.1"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.2.1.tgz#317ac7821826c22c702d66189ab8359675f135d7"
 
-actionware@^8.1.0:
+actionware@8.1.0:
   version "8.1.0"
   resolved "https://registry.yarnpkg.com/actionware/-/actionware-8.1.0.tgz#c89d0c84f3baf93bcb7ccb9b44ec9a96d5d6a005"
 
@@ -595,7 +595,7 @@ aws4@^1.2.1, aws4@^1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.6.0.tgz#83ef5ca860b2b32e4a0deedee8c771b9db57471e"
 
-axios@^0.18.0:
+axios@0.18.0:
   version "0.18.0"
   resolved "https://registry.yarnpkg.com/axios/-/axios-0.18.0.tgz#32d53e4851efdc0a11993b6cd000789d70c05102"
   dependencies:
@@ -858,7 +858,7 @@ babel-plugin-dynamic-import-node@1.1.0:
     babel-template "^6.26.0"
     babel-types "^6.26.0"
 
-babel-plugin-emotion@^8.0.12, babel-plugin-emotion@^8.0.4:
+babel-plugin-emotion@8.0.12, babel-plugin-emotion@^8.0.12:
   version "8.0.12"
   resolved "https://registry.yarnpkg.com/babel-plugin-emotion/-/babel-plugin-emotion-8.0.12.tgz#2ed844001416b0ae2ff787a06b1804ec5f531c89"
   dependencies:
@@ -1285,7 +1285,7 @@ babel-plugin-transform-minify-booleans@^6.8.3:
   version "6.8.3"
   resolved "https://registry.yarnpkg.com/babel-plugin-transform-minify-booleans/-/babel-plugin-transform-minify-booleans-6.8.3.tgz#5906ed776d3718250519abf1bace44b0b613ddf9"
 
-babel-plugin-transform-object-rest-spread@6.26.0, babel-plugin-transform-object-rest-spread@^6.22.0, babel-plugin-transform-object-rest-spread@^6.26.0:
+babel-plugin-transform-object-rest-spread@6.26.0, babel-plugin-transform-object-rest-spread@^6.22.0:
   version "6.26.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-transform-object-rest-spread/-/babel-plugin-transform-object-rest-spread-6.26.0.tgz#0f36692d50fef6b7e2d4b3ac1478137a963b7b06"
   dependencies:
@@ -1472,7 +1472,7 @@ babel-preset-jest@^20.0.3:
   dependencies:
     babel-plugin-jest-hoist "^20.0.3"
 
-babel-preset-latest@^6.24.1:
+babel-preset-latest@6.24.1:
   version "6.24.1"
   resolved "https://registry.yarnpkg.com/babel-preset-latest/-/babel-preset-latest-6.24.1.tgz#677de069154a7485c2d25c577c02f624b85b85e8"
   dependencies:
@@ -2406,7 +2406,7 @@ create-react-class@^15.6.2:
     loose-envify "^1.3.1"
     object-assign "^4.1.1"
 
-cross-env@^5.0.5:
+cross-env@5.1.1:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/cross-env/-/cross-env-5.1.1.tgz#b6d8ab97f304c0f71dae7277b75fe424c08dfa74"
   dependencies:
@@ -2971,7 +2971,7 @@ emotion-utils@^8.0.12:
   version "8.0.12"
   resolved "https://registry.yarnpkg.com/emotion-utils/-/emotion-utils-8.0.12.tgz#5e0fd72db3008f26ce4f80b1972df08841df2168"
 
-emotion@^8.0.5:
+emotion@8.0.12:
   version "8.0.12"
   resolved "https://registry.yarnpkg.com/emotion/-/emotion-8.0.12.tgz#03de11ce26b1b2401c334b94d438652124c514c6"
   dependencies:
@@ -4796,7 +4796,7 @@ jest-get-type@^21.2.0:
   version "21.2.0"
   resolved "https://registry.yarnpkg.com/jest-get-type/-/jest-get-type-21.2.0.tgz#f6376ab9db4b60d81e39f30749c6c466f40d4a23"
 
-jest-glamor-react@^3.1.2:
+jest-glamor-react@3.2.2:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/jest-glamor-react/-/jest-glamor-react-3.2.2.tgz#aa3f12c6f6efc2eb6895e510ccfe871b5f7dfab5"
   dependencies:
@@ -4831,7 +4831,7 @@ jest-jasmine2@^20.0.4:
     once "^1.4.0"
     p-map "^1.1.1"
 
-jest-junit-reporter@^1.1.0:
+jest-junit-reporter@1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/jest-junit-reporter/-/jest-junit-reporter-1.1.0.tgz#88d6006ec13f82df40c47882c8640989cdcb1434"
   dependencies:
@@ -5307,7 +5307,7 @@ lodash.uniq@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
 
-lodash@4.x.x, "lodash@>=3.5 <5", lodash@^4.13.1, lodash@^4.14.0, lodash@^4.15.0, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0, lodash@^4.6.1, lodash@~4.17.4:
+lodash@4.17.4, lodash@4.x.x, "lodash@>=3.5 <5", lodash@^4.13.1, lodash@^4.14.0, lodash@^4.15.0, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0, lodash@^4.6.1, lodash@~4.17.4:
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
@@ -6158,7 +6158,7 @@ podda@^1.2.2:
     babel-runtime "^6.11.6"
     immutable "^3.8.1"
 
-polished@^1.8.2:
+polished@1.9.0:
   version "1.9.0"
   resolved "https://registry.yarnpkg.com/polished/-/polished-1.9.0.tgz#76d277d6610dbcb85477dbba1bd1aa8e642741b6"
 
@@ -6540,7 +6540,7 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.6, prop-types@^15.5.8, prop-types@^15.5.9, prop-types@^15.6.0:
+prop-types@15.6.0, prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.6, prop-types@^15.5.8, prop-types@^15.5.9, prop-types@^15.6.0:
   version "15.6.0"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.0.tgz#ceaf083022fc46b4a35f69e13ef75aed0d639856"
   dependencies:
@@ -6689,11 +6689,11 @@ react-addons-create-fragment@^15.5.3:
     loose-envify "^1.3.1"
     object-assign "^4.1.0"
 
-react-app-rewire-emotion@^3.0.0:
+react-app-rewire-emotion@3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/react-app-rewire-emotion/-/react-app-rewire-emotion-3.0.0.tgz#6528a746f390286a09a603839c3724bbcf53e3dd"
 
-react-app-rewired@^1.3.1:
+react-app-rewired@1.3.6:
   version "1.3.6"
   resolved "https://registry.yarnpkg.com/react-app-rewired/-/react-app-rewired-1.3.6.tgz#9cbff469a21d0afc07d3451c4f5201f5443d6991"
   dependencies:
@@ -6735,7 +6735,7 @@ react-docgen@^2.15.0:
     node-dir "^0.1.10"
     recast "^0.12.6"
 
-react-dom@^16.0.0:
+react-dom@16.2.0:
   version "16.2.0"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.2.0.tgz#69003178601c0ca19b709b33a83369fe6124c044"
   dependencies:
@@ -6744,7 +6744,7 @@ react-dom@^16.0.0:
     object-assign "^4.1.1"
     prop-types "^15.6.0"
 
-react-emotion@^8.0.5:
+react-emotion@8.0.12:
   version "8.0.12"
   resolved "https://registry.yarnpkg.com/react-emotion/-/react-emotion-8.0.12.tgz#3dd94c151197e2e3399e34e3e118df141b5ebb7b"
   dependencies:
@@ -6786,14 +6786,14 @@ react-modal@^3.1.4:
     prop-types "^15.5.10"
     warning "^3.0.0"
 
-react-move@^2.6.0:
+react-move@2.6.0:
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/react-move/-/react-move-2.6.0.tgz#f960c63ccd86c59d007e936993fb48e061af6b54"
   dependencies:
     d3-interpolate "^1.1.3"
     d3-timer "^1.0.4"
 
-react-redux@^5.0.6:
+react-redux@5.0.6:
   version "5.0.6"
   resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-5.0.6.tgz#23ed3a4f986359d68b5212eaaa681e60d6574946"
   dependencies:
@@ -6810,7 +6810,7 @@ react-resize-detector@1.1.0:
   dependencies:
     prop-types "^15.5.10"
 
-react-router-dom@^4.2.2:
+react-router-dom@4.2.2:
   version "4.2.2"
   resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-4.2.2.tgz#c8a81df3adc58bba8a76782e946cbd4eae649b8d"
   dependencies:
@@ -6821,7 +6821,7 @@ react-router-dom@^4.2.2:
     react-router "^4.2.0"
     warning "^3.0.0"
 
-react-router-redux@^5.0.0-alpha.6:
+react-router-redux@5.0.0-alpha.8:
   version "5.0.0-alpha.8"
   resolved "https://registry.yarnpkg.com/react-router-redux/-/react-router-redux-5.0.0-alpha.8.tgz#5242c705730b2ac862aff7a8e90f870d0cf45e12"
   dependencies:
@@ -6841,7 +6841,7 @@ react-router@^4.2.0:
     prop-types "^15.5.4"
     warning "^3.0.0"
 
-react-scripts@^1.0.13:
+react-scripts@1.0.17:
   version "1.0.17"
   resolved "https://registry.yarnpkg.com/react-scripts/-/react-scripts-1.0.17.tgz#c30029123b561a060227af4d7797d50a222d3fbf"
   dependencies:
@@ -6909,7 +6909,7 @@ react-style-proptype@^3.0.0:
   dependencies:
     prop-types "^15.5.4"
 
-react-test-renderer@^16.0.0:
+react-test-renderer@16.2.0:
   version "16.2.0"
   resolved "https://registry.yarnpkg.com/react-test-renderer/-/react-test-renderer-16.2.0.tgz#bddf259a6b8fcd8555f012afc8eacc238872a211"
   dependencies:
@@ -6949,7 +6949,7 @@ react-treebeard@^2.0.3:
     shallowequal "^0.2.2"
     velocity-react "^1.3.1"
 
-react@^16.0.0:
+react@16.2.0:
   version "16.2.0"
   resolved "https://registry.yarnpkg.com/react/-/react-16.2.0.tgz#a31bd2dab89bff65d42134fa187f24d054c273ba"
   dependencies:
@@ -7039,7 +7039,7 @@ recharts-scale@0.3.2:
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/recharts-scale/-/recharts-scale-0.3.2.tgz#dac7621714a4765d152cb2adbc30c73b831208c9"
 
-recharts@^1.0.0-apha.5:
+recharts@1.0.0-beta.6:
   version "1.0.0-beta.6"
   resolved "https://registry.yarnpkg.com/recharts/-/recharts-1.0.0-beta.6.tgz#340e944014138f6206a694c4fa241f3edd655fa2"
   dependencies:
@@ -7092,7 +7092,7 @@ reduce-reducers@^0.1.0:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/reduce-reducers/-/reduce-reducers-0.1.2.tgz#fa1b4718bc5292a71ddd1e5d839c9bea9770f14b"
 
-redux-actions@^2.2.1:
+redux-actions@2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/redux-actions/-/redux-actions-2.2.1.tgz#d64186b25649a13c05478547d7cd7537b892410d"
   dependencies:
@@ -7101,11 +7101,11 @@ redux-actions@^2.2.1:
     lodash-es "^4.17.4"
     reduce-reducers "^0.1.0"
 
-redux-thunk@^2.2.0:
+redux-thunk@2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/redux-thunk/-/redux-thunk-2.2.0.tgz#e615a16e16b47a19a515766133d1e3e99b7852e5"
 
-redux@^3.7.2:
+redux@3.7.2, redux@^3.7.2:
   version "3.7.2"
   resolved "https://registry.yarnpkg.com/redux/-/redux-3.7.2.tgz#06b73123215901d25d065be342eb026bc1c8537b"
   dependencies:
@@ -7407,7 +7407,7 @@ schema-utils@^0.3.0:
   dependencies:
     ajv "^5.0.0"
 
-segmentize@^0.4.1:
+segmentize@0.4.1:
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/segmentize/-/segmentize-0.4.1.tgz#e74db052c8abdea1c77ad87098ac3458910ba047"
 
@@ -7421,7 +7421,7 @@ selfsigned@^1.9.1:
   dependencies:
     node-forge "0.6.33"
 
-semantic-ui-css@^2.2.12:
+semantic-ui-css@2.2.12:
   version "2.2.12"
   resolved "https://registry.yarnpkg.com/semantic-ui-css/-/semantic-ui-css-2.2.12.tgz#afc462e5bb4f8a0dcfe3dca11274499a997490dd"
   dependencies:
@@ -7497,7 +7497,7 @@ serve-static@1.13.1:
     parseurl "~1.3.2"
     send "0.16.1"
 
-serve@^6.2.0:
+serve@6.4.1:
   version "6.4.1"
   resolved "https://registry.yarnpkg.com/serve/-/serve-6.4.1.tgz#a8bdc469e4709c82f673682accdacdf1c1316321"
   dependencies:
@@ -8117,7 +8117,7 @@ to-fast-properties@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/to-fast-properties/-/to-fast-properties-2.0.0.tgz#dc5e698cbd079265bc73e0377681a4e4e83f616e"
 
-toastr@^2.1.2:
+toastr@2.1.2:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/toastr/-/toastr-2.1.2.tgz#fd69066ae7578a5b3357725fc9c7c335e9b681df"
 
@@ -8378,7 +8378,7 @@ validate-npm-package-license@^3.0.1:
     spdx-correct "~1.0.0"
     spdx-expression-parse "~1.0.0"
 
-validate.js@^0.11.1:
+validate.js@0.11.1:
   version "0.11.1"
   resolved "https://registry.yarnpkg.com/validate.js/-/validate.js-0.11.1.tgz#f51c3c6c4a56e6380a20a7eb104245037f2a540d"
 
@@ -8459,7 +8459,7 @@ webidl-conversions@^4.0.0:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/webidl-conversions/-/webidl-conversions-4.0.2.tgz#a855980b1f0b6b359ba1d5d9fb39ae941faa63ad"
 
-webpack-dashboard@^1.0.0:
+webpack-dashboard@1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/webpack-dashboard/-/webpack-dashboard-1.0.2.tgz#78e39f6b179fa5fe1bf3bb7f36daf3bf919ca618"
   dependencies:
