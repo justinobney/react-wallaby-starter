@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Route, Redirect, Switch} from 'react-router-dom';
 import {withRouter} from 'react-router';
+import {hot} from 'react-hot-loader';
 
 import PrivateRoute from 'features/security/PrivateRoute';
 import AuthRoutes from 'features/auth/Routes';
@@ -18,4 +19,4 @@ class App extends Component {
   }
 }
 
-export default withRouter(App);
+export default hot(module)(withRouter(App));
