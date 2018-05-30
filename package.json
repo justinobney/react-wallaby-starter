@@ -25,7 +25,7 @@
     "react-app-rewire-emotion": "4.0.0",
     "react-scripts": "1.1.4",
     "react-test-renderer": "16.4.0",
-    "serve": "7.1.1"
+    "serve": "7.1.5"
   },
   "dependencies": {
     "actionware": "8.2.3",
