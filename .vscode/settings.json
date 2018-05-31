@@ -1,7 +1,6 @@
 {
   "editor.minimap.enabled": false,
   "editor.formatOnSave": true,
-  "editor.formatOnPaste": true,
   "editor.autoIndent": false,
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "workbench.sideBar.location": "right"

@@ -3,7 +3,7 @@ import {Redirect, Route} from 'react-router-dom';
 import {connect} from 'react-redux';
 import types from 'prop-types';
 
-export const PrivateRoute = ({component, user, ...rest}) => {
+export const PrivateRoute = ({component, render, user, ...rest}) => {
   const canRoute = !!user;
 
   return (
@@ -11,7 +11,11 @@ export const PrivateRoute = ({component, user, ...rest}) => {
       {...rest}
       render={props =>
         canRoute ? (
-          createElement(component, props)
+          component ? (
+            createElement(component, props)
+          ) : (
+            render(props)
+          )
         ) : (
           <Redirect
             to={{
@@ -19,7 +23,8 @@ export const PrivateRoute = ({component, user, ...rest}) => {
               state: {from: props.location},
             }}
           />
-        )}
+        )
+      }
     />
   );
 };

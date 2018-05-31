@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'react-emotion';
 
-import {COMPANY_NAME} from 'constants.js';
+import {COMPANY_NAME} from '../../constants';
 
 const Footer = styled.footer`
   text-align: center;

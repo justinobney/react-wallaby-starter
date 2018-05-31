@@ -10,7 +10,7 @@ export const RequiresClaim = ({claim, claims = [], children}) => {
 };
 
 RequiresClaim.propTypes = {
-  claims: types.object,
+  claims: types.array,
   claim: types.string.isRequired,
 };
 

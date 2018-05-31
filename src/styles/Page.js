@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'react-emotion';
 import {Container, Header} from 'semantic-ui-react';
 
-import AppFooter from 'features/layout/AppFooter';
+import AppFooter from '../features/layout/AppFooter';
 import Layout, * as styles from './Layout';
 
 const Page = Layout;

@@ -14,10 +14,10 @@ import {connect} from 'react-redux';
 import styled from 'react-emotion';
 import {withActions} from 'actionware';
 
-import {logout} from 'store/identity';
-import * as styles from 'styles/Layout';
-import {APP_NAME, RESPONSIVE_SIZES} from 'constants.js';
-import {colors} from 'styles/theme';
+import {logout} from '../../store/identity';
+import * as styles from '../../styles/Layout';
+import {APP_NAME, RESPONSIVE_SIZES} from '../../constants';
+import {colors} from '../../styles/theme';
 
 const MenuWrapper = styled.div`
   ${styles.fixed};

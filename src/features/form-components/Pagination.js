@@ -10,8 +10,8 @@ export default class Pagination extends Component {
       page: currentPage,
       pages: totalCount,
       beginPages: 1,
-      endPages: 1,
       sidePages: 2,
+      endPages: 1,
     });
 
     const leftPages = [...segments.beginPages, ...segments.previousPages];

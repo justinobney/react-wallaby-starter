@@ -5,12 +5,16 @@ import {Redirect} from 'react-router-dom';
 import styled from 'react-emotion';
 import {Button, Form, Container, Header, Segment} from 'semantic-ui-react';
 import {withActions, isBusy} from 'actionware';
-import {login} from 'store/identity';
 
-import AppFooter from 'features/layout/AppFooter';
+import {login} from '../../store/identity';
+import AppFooter from '../layout/AppFooter';
 
-const Wrapper = styled.div`margin-top: 100px;`;
-const BoxShadow = styled.div`box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);`;
+const Wrapper = styled.div`
+  margin-top: 100px;
+`;
+const BoxShadow = styled.div`
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+`;
 const FormWrapper = styled(Segment)`
   &.ui.attached.segment {
     padding-top: 20px;

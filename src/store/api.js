@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {objectMap} from 'features/validation';
+import {objectMap} from '../features/validation/ErrorAwareField';
 
 const instance = axios.create({
   baseURL: '/api',

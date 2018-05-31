@@ -12,12 +12,17 @@ const DimmableWrapper = styled(Dimmer.Dimmable)`
   margin-bottom: 10px;
 `;
 
-const FormContainer = ({children, loading, ...props}) => {
+const FormContainer = ({
+  children,
+  loading,
+  loadingMessage = 'Loading...',
+  ...props
+}) => {
   return (
     <DimmableWrapper dimmed={loading} {...props}>
       {children}
       <Dimmer active={loading} inverted>
-        <Loader>Loading...</Loader>
+        <Loader>{loadingMessage}</Loader>
       </Dimmer>
     </DimmableWrapper>
   );

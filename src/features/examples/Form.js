@@ -9,9 +9,10 @@ import {
   Segment,
 } from 'semantic-ui-react';
 import {Link} from 'react-router-dom';
-import Page from 'styles/Page';
-import FormContainer from 'features/form-components/FormContainer';
-import ErrorAwareField from 'features/validation/ErrorAwareField';
+
+import Page from '../../styles/Page';
+import FormContainer from '../form-components/FormContainer';
+import ErrorAwareField from '../validation/ErrorAwareField';
 
 const genderOptions = [
   {key: 'm', text: 'Male', value: 'male'},
