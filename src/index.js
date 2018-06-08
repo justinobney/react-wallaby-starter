@@ -12,12 +12,7 @@ import App from './App';
 
 const history = createHistory();
 const store = createStore(history);
-const rootEl = document.getElementById('root');
-
-analytics.page(window.location.pathname);
-history.listen((location, action) => {
-  analytics.page(location.pathname);
-});
+analytics.trackHistory(history);
 
 render(
   <Provider store={store}>
@@ -25,18 +20,5 @@ render(
       <App />
     </ConnectedRouter>
   </Provider>,
-  rootEl
+  document.getElementById('root')
 );
-
-if (module.hot) {
-  module.hot.accept('./App', () => {
-    render(
-      <Provider store={store}>
-        <ConnectedRouter history={history}>
-          <App />
-        </ConnectedRouter>
-      </Provider>,
-      rootEl
-    );
-  });
-}
