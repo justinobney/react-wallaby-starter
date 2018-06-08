@@ -1,5 +1,5 @@
 import React from 'react';
-import {create} from 'react-test-renderer';
+import {render, Simulate} from 'react-testing-library';
 import RadioButtons from './RadioButtons';
 
 describe('Component: RadioButtons', () => {
@@ -10,16 +10,16 @@ describe('Component: RadioButtons', () => {
       {value: 15, label: '15'},
     ];
 
-    const tree = create(
+    const {container} = render(
       <RadioButtons
         name="test"
         options={options}
         value={5}
         onChange={Function()} // eslint-disable-line
       />
-    ).toJSON();
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   it('default render without selected value', () => {
@@ -29,11 +29,11 @@ describe('Component: RadioButtons', () => {
       {value: 15, label: '15'},
     ];
 
-    const tree = create(
+    const {container} = render(
       <RadioButtons options={options} name="test" onChange={Function()} /> // eslint-disable-line
-    ).toJSON();
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   it('clicking an option calls the callback', () => {
@@ -45,17 +45,16 @@ describe('Component: RadioButtons', () => {
 
     const onChange = jest.fn();
 
-    const tree = create(
+    const {getByText} = render(
       <RadioButtons
         name="test"
         options={options}
         value={10}
         onChange={onChange}
       />
-    ).toJSON();
+    );
 
-    // div > [buttons, ...]
-    tree.children[0].props.onClick();
+    Simulate.click(getByText('5'));
 
     expect(onChange.mock.calls[0][1]).toEqual({name: 'test', value: 5});
   });

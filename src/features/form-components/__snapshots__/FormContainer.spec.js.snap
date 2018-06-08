@@ -11,24 +11,19 @@ exports[`Component: FormContainer Stories Default 1`] = `
 }
 
 <div
-  className="dimmable emotion-0"
+  class="dimmable emotion-0"
 >
   Some Content
   <div
-    className="ui inverted dimmer"
-    onClick={[Function]}
+    class="ui inverted dimmer"
   >
     <div
-      className="content"
+      class="content"
     >
       <div
-        className="center"
+        class="ui text loader"
       >
-        <div
-          className="ui text loader"
-        >
-          Loading...
-        </div>
+        Loading...
       </div>
     </div>
   </div>
@@ -46,24 +41,20 @@ exports[`Component: FormContainer Stories Loading 1`] = `
 }
 
 <div
-  className="dimmed dimmable emotion-0"
+  class="dimmed dimmable emotion-0"
 >
   My content is dimmed
   <div
-    className="ui active transition visible inverted dimmer"
-    onClick={[Function]}
+    class="ui active transition visible inverted dimmer"
+    style="display: flex;"
   >
     <div
-      className="content"
+      class="content"
     >
       <div
-        className="center"
+        class="ui text loader"
       >
-        <div
-          className="ui text loader"
-        >
-          Loading...
-        </div>
+        Loading...
       </div>
     </div>
   </div>
@@ -81,24 +72,20 @@ exports[`Component: FormContainer Stories Loading Message 1`] = `
 }
 
 <div
-  className="dimmed dimmable emotion-0"
+  class="dimmed dimmable emotion-0"
 >
   My content is dimmed
   <div
-    className="ui active transition visible inverted dimmer"
-    onClick={[Function]}
+    class="ui active transition visible inverted dimmer"
+    style="display: flex;"
   >
     <div
-      className="content"
+      class="content"
     >
       <div
-        className="center"
+        class="ui text loader"
       >
-        <div
-          className="ui text loader"
-        >
-          Custom Loading Message
-        </div>
+        Custom Loading Message
       </div>
     </div>
   </div>
@@ -116,26 +103,19 @@ exports[`Component: FormContainer Stories Passes Extra Props 1`] = `
 }
 
 <form
-  action={undefined}
-  className="ui form dimmable emotion-0"
-  onSubmit={[Function]}
+  class="ui form dimmable emotion-0"
 >
   Some Content
   <div
-    className="ui inverted dimmer"
-    onClick={[Function]}
+    class="ui inverted dimmer"
   >
     <div
-      className="content"
+      class="content"
     >
       <div
-        className="center"
+        class="ui text loader"
       >
-        <div
-          className="ui text loader"
-        >
-          Loading...
-        </div>
+        Loading...
       </div>
     </div>
   </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import {create} from 'react-test-renderer';
+import {render} from 'react-testing-library';
 import {MemoryRouter} from 'react-router';
 import {PrivateRoute} from './PrivateRoute';
 
@@ -7,20 +7,20 @@ const RouteComponent = () => <div />;
 
 describe('Component: PrivateRoute', () => {
   it('should render component when user exists', () => {
-    const tree = create(
+    const {container} = render(
       <MemoryRouter initialEntries={['/app']} initialIndex={1}>
         <PrivateRoute path="/app" user={{}} component={RouteComponent} />
       </MemoryRouter>
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
+    );
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   it('should render null when user does not exist', () => {
-    const tree = create(
+    const {container} = render(
       <MemoryRouter initialEntries={['/app']} initialIndex={1}>
         <PrivateRoute path="/app" component={RouteComponent} />
       </MemoryRouter>
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
+    );
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

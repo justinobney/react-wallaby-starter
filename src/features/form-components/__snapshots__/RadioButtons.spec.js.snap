@@ -2,35 +2,26 @@
 
 exports[`Component: RadioButtons default render with selected value 1`] = `
 <div
-  className="ui buttons"
+  class="ui buttons"
 >
   <button
-    className="ui active button"
-    disabled={undefined}
-    onClick={[Function]}
-    role="button"
-    tabIndex={undefined}
     type="button"
+    class="ui active button"
+    role="button"
   >
     5
   </button>
   <button
-    className="ui button"
-    disabled={undefined}
-    onClick={[Function]}
-    role="button"
-    tabIndex={undefined}
     type="button"
+    class="ui button"
+    role="button"
   >
     10
   </button>
   <button
-    className="ui button"
-    disabled={undefined}
-    onClick={[Function]}
-    role="button"
-    tabIndex={undefined}
     type="button"
+    class="ui button"
+    role="button"
   >
     15
   </button>
@@ -39,35 +30,26 @@ exports[`Component: RadioButtons default render with selected value 1`] = `
 
 exports[`Component: RadioButtons default render without selected value 1`] = `
 <div
-  className="ui buttons"
+  class="ui buttons"
 >
   <button
-    className="ui button"
-    disabled={undefined}
-    onClick={[Function]}
-    role="button"
-    tabIndex={undefined}
     type="button"
+    class="ui button"
+    role="button"
   >
     5
   </button>
   <button
-    className="ui button"
-    disabled={undefined}
-    onClick={[Function]}
-    role="button"
-    tabIndex={undefined}
     type="button"
+    class="ui button"
+    role="button"
   >
     10
   </button>
   <button
-    className="ui button"
-    disabled={undefined}
-    onClick={[Function]}
-    role="button"
-    tabIndex={undefined}
     type="button"
+    class="ui button"
+    role="button"
   >
     15
   </button>
