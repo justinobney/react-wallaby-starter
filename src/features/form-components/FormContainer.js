@@ -31,6 +31,7 @@ const FormContainer = ({
 FormContainer.propTypes = {
   children: types.node.isRequired,
   loading: types.bool,
+  loadingMessage: types.string,
 };
 
 export default FormContainer;

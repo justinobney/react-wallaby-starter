@@ -12,8 +12,18 @@ module.exports = function(wallaby) {
   // Babel needs this
   process.env.NODE_ENV = 'development';
 
+  const babelCompiler = wallaby.compilers.babel({
+    presets: ['latest', 'react'],
+    plugins: ['transform-object-rest-spread', 'transform-class-properties'],
+  });
+
   return {
-    files: ['src/**/*.js?(x)', 'src/**/*.snap', '!src/**/*.spec.js?(x)'],
+    files: [
+      'src/**/*.js?(x)',
+      'src/**/*.snap',
+      '!src/**/*.spec.js?(x)',
+      '.storybook/config.js',
+    ],
     tests: ['src/**/*.spec.js?(x)'],
     env: {
       type: 'node',
@@ -23,10 +33,9 @@ module.exports = function(wallaby) {
       },
     },
     compilers: {
-      '**/*.js?(x)': wallaby.compilers.babel({
-        presets: ['latest', 'react'],
-        plugins: ['transform-object-rest-spread', 'transform-class-properties'],
-      }),
+      '**/*.js?(x)': babelCompiler,
+      'src/storyshots.spec.js': babelCompiler,
+      '.storybook/config.js': babelCompiler,
     },
     setup: wallaby => {
       wallaby.testFramework.configure({

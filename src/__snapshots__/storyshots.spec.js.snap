@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Component: FormContainer Stories Default 1`] = `
+exports[`Storyshots FormContainer Default render 1`] = `
 .emotion-0 {
   box-shadow: 0 0 15px 2px rgba(0,0,0,0.1);
   border-radius: 5px;
@@ -11,17 +11,18 @@ exports[`Component: FormContainer Stories Default 1`] = `
 }
 
 <div
-  class="dimmable emotion-0"
+  className="dimmable emotion-0"
 >
   Some Content
   <div
-    class="ui inverted dimmer"
+    className="ui inverted dimmer"
+    onClick={[Function]}
   >
     <div
-      class="content"
+      className="content"
     >
       <div
-        class="ui text loader"
+        className="ui text loader"
       >
         Loading...
       </div>
@@ -30,7 +31,7 @@ exports[`Component: FormContainer Stories Default 1`] = `
 </div>
 `;
 
-exports[`Component: FormContainer Stories Loading 1`] = `
+exports[`Storyshots FormContainer Loading 1`] = `
 .emotion-0 {
   box-shadow: 0 0 15px 2px rgba(0,0,0,0.1);
   border-radius: 5px;
@@ -41,18 +42,18 @@ exports[`Component: FormContainer Stories Loading 1`] = `
 }
 
 <div
-  class="dimmed dimmable emotion-0"
+  className="dimmed dimmable emotion-0"
 >
   My content is dimmed
   <div
-    class="ui active transition visible inverted dimmer"
-    style="display: flex;"
+    className="ui active transition visible inverted dimmer"
+    onClick={[Function]}
   >
     <div
-      class="content"
+      className="content"
     >
       <div
-        class="ui text loader"
+        className="ui text loader"
       >
         Loading...
       </div>
@@ -61,7 +62,7 @@ exports[`Component: FormContainer Stories Loading 1`] = `
 </div>
 `;
 
-exports[`Component: FormContainer Stories Loading Message 1`] = `
+exports[`Storyshots FormContainer Loading Message 1`] = `
 .emotion-0 {
   box-shadow: 0 0 15px 2px rgba(0,0,0,0.1);
   border-radius: 5px;
@@ -72,18 +73,18 @@ exports[`Component: FormContainer Stories Loading Message 1`] = `
 }
 
 <div
-  class="dimmed dimmable emotion-0"
+  className="dimmed dimmable emotion-0"
 >
   My content is dimmed
   <div
-    class="ui active transition visible inverted dimmer"
-    style="display: flex;"
+    className="ui active transition visible inverted dimmer"
+    onClick={[Function]}
   >
     <div
-      class="content"
+      className="content"
     >
       <div
-        class="ui text loader"
+        className="ui text loader"
       >
         Custom Loading Message
       </div>
@@ -92,7 +93,7 @@ exports[`Component: FormContainer Stories Loading Message 1`] = `
 </div>
 `;
 
-exports[`Component: FormContainer Stories Passes Extra Props 1`] = `
+exports[`Storyshots FormContainer Passes Extra Props 1`] = `
 .emotion-0 {
   box-shadow: 0 0 15px 2px rgba(0,0,0,0.1);
   border-radius: 5px;
@@ -103,17 +104,20 @@ exports[`Component: FormContainer Stories Passes Extra Props 1`] = `
 }
 
 <form
-  class="ui form dimmable emotion-0"
+  action={undefined}
+  className="ui form dimmable emotion-0"
+  onSubmit={[Function]}
 >
   Some Content
   <div
-    class="ui inverted dimmer"
+    className="ui inverted dimmer"
+    onClick={[Function]}
   >
     <div
-      class="content"
+      className="content"
     >
       <div
-        class="ui text loader"
+        className="ui text loader"
       >
         Loading...
       </div>
