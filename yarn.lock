@@ -289,6 +289,10 @@
     react-split-pane "^0.1.77"
     react-treebeard "^2.1.0"
 
+"@types/jest@^23.0.2":
+  version "23.1.6"
+  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-23.1.6.tgz#11c88f738f5b57d1a9dd4970c576a6639b8f0f37"
+
 "@zeit/schemas@1.2.0":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@zeit/schemas/-/schemas-1.2.0.tgz#89e47b2f2bd41cdb52f54ff23038ccd9b1eb30da"
@@ -4964,10 +4968,12 @@ jest-dom@^1.0.0:
     pretty-format "^23.0.1"
     redent "^2.0.0"
 
-jest-emotion@9.1.3:
-  version "9.1.3"
-  resolved "https://registry.yarnpkg.com/jest-emotion/-/jest-emotion-9.1.3.tgz#d6dab1210f00d438c932b3d96c0401ff4606339c"
+jest-emotion@9.2.6:
+  version "9.2.6"
+  resolved "https://registry.yarnpkg.com/jest-emotion/-/jest-emotion-9.2.6.tgz#eeaf25b23fdb2f65e489cc33040395f39e66012d"
   dependencies:
+    "@types/jest" "^23.0.2"
+    chalk "^2.4.1"
     css "^2.2.1"
 
 jest-environment-jsdom@^20.0.3:
