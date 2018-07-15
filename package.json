@@ -18,7 +18,7 @@
     "@storybook/addon-knobs": "^3.4.6",
     "@storybook/addon-links": "3.4.6",
     "@storybook/react": "3.4.6",
-    "babel-plugin-emotion": "9.1.2",
+    "babel-plugin-emotion": "9.2.6",
     "babel-plugin-transform-class-properties": "6.24.1",
     "babel-plugin-transform-object-rest-spread": "6.26.0",
     "babel-preset-latest": "6.24.1",
