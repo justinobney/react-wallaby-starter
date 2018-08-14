@@ -33,7 +33,7 @@
     "react-scripts": "1.1.4",
     "react-test-renderer": "16.4.0",
     "react-testing-library": "^3.1.3",
-    "serve": "8.1.0"
+    "serve": "9.6.0"
   },
   "dependencies": {
     "actionware": "8.2.3",
